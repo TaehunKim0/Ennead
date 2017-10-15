@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ennead", "Ennead\Ennead.vcxproj", "{80EE1C7D-83D5-48CC-9AFE-A59528E0C601}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Knights", "..\Knights\Knights\Knights.vcxproj", "{E174AC58-38C6-4083-9C63-F521258809FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{80EE1C7D-83D5-48CC-9AFE-A59528E0C601}.Release|x64.Build.0 = Release|x64
 		{80EE1C7D-83D5-48CC-9AFE-A59528E0C601}.Release|x86.ActiveCfg = Release|Win32
 		{80EE1C7D-83D5-48CC-9AFE-A59528E0C601}.Release|x86.Build.0 = Release|Win32
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Debug|x64.ActiveCfg = Debug|x64
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Debug|x64.Build.0 = Debug|x64
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Debug|x86.ActiveCfg = Debug|Win32
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Debug|x86.Build.0 = Debug|Win32
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Release|x64.ActiveCfg = Release|x64
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Release|x64.Build.0 = Release|x64
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Release|x86.ActiveCfg = Release|Win32
+		{E174AC58-38C6-4083-9C63-F521258809FD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
