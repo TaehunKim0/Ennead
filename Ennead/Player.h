@@ -15,11 +15,19 @@ enum class PlayerDirection
 	Right
 };
 
+enum class PlayerState
+{
+	Idle = 1,
+	Move,
+	Attack,
+};
+
 class Player : public GameObject
 {
 private:
-	int Health;
-	int Speed;
+	int m_Health;
+	int m_Speed;
+	bool checkInput;
 
 	Sprite* player;
 
@@ -33,12 +41,17 @@ public:
 
 	PlayerClass Job;
 	PlayerDirection pDirection;
+	PlayerState pState;
 
 	void SetAnimWithClass(PlayerClass job);
 
 	bool Init();
 	void Update(float deltaTime);
 	void Render();
+
+public:
+	void Move(); //이동
+	void Attack(); //총알 발사
 
 };
 

@@ -23,9 +23,11 @@ bool Stage1::Init()
 void Stage1::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+	BulletMgr::GetInstance()->Update(deltaTime);
 }
 
 void Stage1::Render()
 {
 	GameObject::Render();
+	BulletMgr::GetInstance()->Render();
 }

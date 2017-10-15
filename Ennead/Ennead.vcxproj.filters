@@ -17,6 +17,12 @@
     <ClCompile Include="PrevHeader.cpp">
       <Filter>PrevHeader</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletMgr.cpp">
+      <Filter>BulletMgr</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -27,6 +33,12 @@
     </Filter>
     <Filter Include="PrevHeader">
       <UniqueIdentifier>{cc9b412c-6126-4c8f-82b1-d8d17ca0cad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{7721b051-1390-4d28-b819-2664175b82ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BulletMgr">
+      <UniqueIdentifier>{239dc31b-624f-4580-83e7-ec81636bad2b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +56,12 @@
     </ClInclude>
     <ClInclude Include="PrevHeader.h">
       <Filter>PrevHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletMgr.h">
+      <Filter>BulletMgr</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
