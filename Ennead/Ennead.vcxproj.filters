@@ -21,7 +21,7 @@
       <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="BulletMgr.cpp">
-      <Filter>BulletMgr</Filter>
+      <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,7 +37,7 @@
     <Filter Include="Object">
       <UniqueIdentifier>{7721b051-1390-4d28-b819-2664175b82ec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="BulletMgr">
+    <Filter Include="Manager">
       <UniqueIdentifier>{239dc31b-624f-4580-83e7-ec81636bad2b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -61,7 +61,7 @@
       <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="BulletMgr.h">
-      <Filter>BulletMgr</Filter>
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

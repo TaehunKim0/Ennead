@@ -21,9 +21,8 @@ void BulletMgr::Render()
 	GameObject::Render();
 }
 
-void BulletMgr::CreateBullet(Vector2 pos, std::wstring img, BulletTag tag)
+void BulletMgr::CreateBullet(Vector2 pos, std::wstring img, Tag tag)
 {
 	auto bullet = Bullet::Create(pos, img.c_str(), tag);
 	AddChild(bullet);
-
 }

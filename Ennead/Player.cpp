@@ -50,6 +50,8 @@ void Player::SetAnimWithClass(PlayerClass job)
 bool Player::Init()
 {
 	player = Sprite::Create(L"Resources/Anubis.png");
+	m_Tag = Tag::Player;
+
 	AddChild(player);
 	
 	return true;
@@ -90,6 +92,29 @@ void Player::Update(float deltaTime)
 void Player::Render()
 {
 	GameObject::Render();
+
+	if (pState == PlayerState::Move)
+	{
+		switch (pDirection)
+		{
+		case PlayerDirection::Up:
+
+			break;
+
+		case PlayerDirection::Down:
+
+			break;
+
+		case PlayerDirection::Left:
+
+			break;
+
+		case PlayerDirection::Right:
+
+			break;
+
+		}
+	}
 }
 
 void Player::Move()

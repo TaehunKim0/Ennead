@@ -11,6 +11,6 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-	void CreateBullet(Vector2 pos, std::wstring img, BulletTag tag);
+	void CreateBullet(Vector2 pos, std::wstring img, Tag tag);
 };
 
