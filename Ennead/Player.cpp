@@ -168,6 +168,6 @@ void Player::Attack()
 {
 	if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::Up)
 	{
-		BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, 0.f), L"Resources/Bullet.png", BulletTag::Player);
+		BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, 0.f), L"Resources/Bullet.png", Tag::Player);
 	}
 }
