@@ -20,14 +20,13 @@ protected:
 	int m_Health;
 	int m_Speed;
 
-	EnemyName m_Name;
+	EnemyName m_EName;
 
 public:
 	Enemy();
 	~Enemy();
 
-	
-
+	void Release();
 	bool Init(Vector2 pos);
 	void Update(float deltaTime);
 	void Render();

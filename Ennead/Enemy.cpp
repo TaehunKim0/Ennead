@@ -14,6 +14,10 @@ Enemy::~Enemy()
 }
 
 
+void Enemy::Release()
+{
+}
+
 bool Enemy::Init(Vector2 pos)
 {
 	m_Position = pos;

@@ -11,6 +11,10 @@ EnemySpawner::~EnemySpawner()
 {
 }
 
+void EnemySpawner::Release()
+{
+}
+
 void EnemySpawner::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);

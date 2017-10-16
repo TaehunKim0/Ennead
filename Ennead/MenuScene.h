@@ -9,6 +9,7 @@ public:
 	MenuScene();
 	~MenuScene();
 
+	void Release();
 	bool Init();
 	void Update(float deltaTime);
 	void Render();

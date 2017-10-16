@@ -9,6 +9,7 @@ public:
 	CharacterSelectScene();
 	~CharacterSelectScene();
 
+	void Release();
 	bool Init();
 	void Update(float deltaTime);
 	void Render();

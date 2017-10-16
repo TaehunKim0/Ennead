@@ -11,6 +11,10 @@ MenuScene::~MenuScene()
 {
 }
 
+void MenuScene::Release()
+{
+}
+
 bool MenuScene::Init()
 {
 

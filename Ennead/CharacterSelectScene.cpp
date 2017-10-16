@@ -11,6 +11,10 @@ CharacterSelectScene::~CharacterSelectScene()
 {
 }
 
+void CharacterSelectScene::Release()
+{
+}
+
 bool CharacterSelectScene::Init()
 {
 	return true;

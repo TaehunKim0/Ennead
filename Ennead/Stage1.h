@@ -11,8 +11,8 @@ public:
 	Stage1();
 	~Stage1();
 
+	void Release();
 	bool Init();
 	void Update(float deltaTime);
 	void Render();
 };
-

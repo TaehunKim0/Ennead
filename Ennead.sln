@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ennead", "Ennead\Ennead.vcxproj", "{80EE1C7D-83D5-48CC-9AFE-A59528E0C601}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Knights", "..\Knights-Engine\Knights\Knights.vcxproj", "{E174AC58-38C6-4083-9C63-F521258809FD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Knights", "..\Knights\Knights\Knights.vcxproj", "{E174AC58-38C6-4083-9C63-F521258809FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

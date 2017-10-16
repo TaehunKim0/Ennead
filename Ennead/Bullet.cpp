@@ -5,6 +5,7 @@
 Bullet::Bullet()
 	: m_Speed(5.f)
 {	
+	IsCollide = 0;
 }
 
 
@@ -24,16 +25,21 @@ Bullet * Bullet::Create(Vector2 pos,std::wstring img, Tag tag)
 	return nullptr;
 }
 
+void Bullet::Release()
+{
+}
+
 bool Bullet::Init(Vector2 pos, std::wstring img, Tag tag)
 {
 	m_Position = pos;
 	m_bullet = Sprite::Create(img.c_str());
 	m_Tag = tag;
 
-	m_Collider = BoxCollider::Create(m_Position, m_Size);
+	m_Collision = BoxCollider::Create(m_Position, m_Size);
 
-	AddChild(m_Collider);
+	AddChild(m_Collision);
 	AddChild(m_bullet);
+
 
 	return true;
 }
@@ -41,6 +47,11 @@ bool Bullet::Init(Vector2 pos, std::wstring img, Tag tag)
 void Bullet::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+	if (IsCollide)
+	{
+		CollisionMgr::GetInstance()->Destroy(m_Collision);
+		Destroy();
+	}
 
 	if (m_Tag == Tag::Player)
 	{
@@ -51,10 +62,18 @@ void Bullet::Update(float deltaTime)
 	{
 		SetPosition(0.f, 5.f);
 	}
-
 }
 
 void Bullet::Render()
 {
 	GameObject::Render();
+}
+
+void Bullet::OnCollision(GameObject * other)
+{
+	if (other)
+	{
+		IsCollide = 1;
+		printf("Bullet Destroyed\n");
+	}
 }

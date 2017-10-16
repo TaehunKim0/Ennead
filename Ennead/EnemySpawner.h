@@ -7,6 +7,7 @@ public:
 	EnemySpawner();
 	~EnemySpawner();
 
+	void Release();
 	void Update(float deltaTime);
 	void Render();
 

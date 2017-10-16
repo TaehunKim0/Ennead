@@ -6,7 +6,7 @@ class Bullet : public GameObject
 private:
 	Sprite* m_bullet;
 	int m_Speed;
-	BoxCollider* m_Collider;
+	bool IsCollide;
 
 public:
 	Bullet();
@@ -14,9 +14,12 @@ public:
 
 	static Bullet* Create(Vector2 pos, std::wstring img, Tag tag);
 
+	void Release();
 	bool Init(Vector2 pos,std::wstring img, Tag tag);
 	void Update(float deltaTime);
 	void Render();
 	
+	void OnCollision(GameObject* other);
+
 };
 

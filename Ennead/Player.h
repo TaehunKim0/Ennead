@@ -29,8 +29,6 @@ private:
 	int m_Speed;
 	bool checkInput;
 
-	
-
 	Sprite* player;
 
 	Animation* Straight;
@@ -38,7 +36,7 @@ private:
 	Animation* Right;
 
 public:
-	BoxCollider* m_Collision;
+	//BoxCollider* m_Collision;
 
 	Player();
 	~Player();
@@ -49,9 +47,11 @@ public:
 
 	void SetAnimWithClass(PlayerClass job);
 
+
 	bool Init();
 	void Update(float deltaTime);
 	void Render();
+	void Release();
 
 	void OnCollision(GameObject* other);
 
