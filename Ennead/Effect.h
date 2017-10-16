@@ -1,8 +1,13 @@
 #pragma once
-class Effect
+class Effect : public GameObject
 {
+private:
+
+
 public:
 	Effect();
 	~Effect();
-};
 
+	void Update(float deltaTime);
+	void Render();
+};

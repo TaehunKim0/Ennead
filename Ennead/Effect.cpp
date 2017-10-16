@@ -10,3 +10,11 @@ Effect::Effect()
 Effect::~Effect()
 {
 }
+
+void Effect::Update(float deltaTime)
+{
+}
+
+void Effect::Render()
+{
+}

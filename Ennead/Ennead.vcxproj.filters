@@ -17,12 +17,17 @@
     <ClCompile Include="BulletMgr.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Player.cpp">
       <Filter>Player</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
       <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectMgr.cpp">
+      <Filter>Effect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -41,7 +46,7 @@
     <Filter Include="Manager">
       <UniqueIdentifier>{239dc31b-624f-4580-83e7-ec81636bad2b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Enemy">
+    <Filter Include="Effect">
       <UniqueIdentifier>{e5e0d871-b71b-460d-8fef-f13ebf0c3620}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -67,6 +72,11 @@
     <ClInclude Include="BulletMgr.h">
       <Filter>Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Effect.h" />
+    <ClInclude Include="EffectMgr.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Effect</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
