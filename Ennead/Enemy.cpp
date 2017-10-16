@@ -4,7 +4,7 @@
 
 Enemy::Enemy()
 	:m_Health(1)
-	,m_Speed(5.f)
+	,m_Speed(2.f)
 {
 }
 
@@ -16,6 +16,7 @@ Enemy::~Enemy()
 
 void Enemy::Release()
 {
+	GameObject::Release();
 }
 
 bool Enemy::Init(Vector2 pos)

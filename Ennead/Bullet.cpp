@@ -27,6 +27,7 @@ Bullet * Bullet::Create(Vector2 pos,std::wstring img, Tag tag)
 
 void Bullet::Release()
 {
+	GameObject::Release();
 }
 
 bool Bullet::Init(Vector2 pos, std::wstring img, Tag tag)

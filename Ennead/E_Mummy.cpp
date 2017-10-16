@@ -25,6 +25,7 @@ E_Mummy * E_Mummy::Create(Vector2 pos)
 
 void E_Mummy::Release()
 {
+	GameObject::Release();
 }
 
 bool E_Mummy::Init(Vector2 pos)
@@ -57,7 +58,7 @@ void E_Mummy::Update(float deltaTime)
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}
-	//SetPosition(0.f, 1.f);
+	SetPosition(0.f, 1.f);
 
 }
 
