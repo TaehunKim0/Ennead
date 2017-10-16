@@ -2,7 +2,7 @@
 enum class PlayerClass
 {
 	Warrior = 1,
-	Assassin,
+	Thief,
 	Archer,
 	Magician
 };
@@ -29,6 +29,8 @@ private:
 	int m_Speed;
 	bool checkInput;
 
+	
+
 	Sprite* player;
 
 	Animation* Straight;
@@ -36,6 +38,8 @@ private:
 	Animation* Right;
 
 public:
+	BoxCollider* m_Collision;
+
 	Player();
 	~Player();
 
@@ -48,6 +52,8 @@ public:
 	bool Init();
 	void Update(float deltaTime);
 	void Render();
+
+	void OnCollision(GameObject* other);
 
 public:
 	void Move(); //¿Ãµø

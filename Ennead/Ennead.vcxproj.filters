@@ -35,7 +35,9 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="E_Mummy.cpp" />
+    <ClCompile Include="E_Mummy.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -94,6 +96,8 @@
     <ClInclude Include="Enemy.h">
       <Filter>Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="E_Mummy.h" />
+    <ClInclude Include="E_Mummy.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

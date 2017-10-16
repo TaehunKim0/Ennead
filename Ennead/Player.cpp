@@ -23,7 +23,7 @@ void Player::SetAnimWithClass(PlayerClass job)
 			//Right->
 		}
 
-		if (job == PlayerClass::Assassin)
+		if (job == PlayerClass::Thief)
 		{
 			//Straight->AddFrame
 			//Left->
@@ -52,14 +52,24 @@ bool Player::Init()
 	player = Sprite::Create(L"Resources/Anubis.png");
 	m_Tag = Tag::Player;
 
+	m_Collision = BoxCollider::Create(m_Position, m_Size);
+
+	CollisionMgr::GetInstance()->AddBoxCollider(m_Collision);
+
 	AddChild(player);
-	
+	AddChild(m_Collision);
+
 	return true;
 }
 
 void Player::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+
+	m_Collision->SetPosition(m_Position);
+
+	if (m_Health <= 0)
+		printf("Player dead\n");
 
 	Move();
 	Attack();
@@ -115,6 +125,15 @@ void Player::Render()
 
 		}
 	}
+}
+
+void Player::OnCollision(GameObject * other)
+{
+	if (other->GetTag() == Tag::Enemy)
+		m_Health -= 1;
+
+
+
 }
 
 void Player::Move()

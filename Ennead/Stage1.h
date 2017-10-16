@@ -5,7 +5,6 @@ private:
 	Sprite* Map1;
 	Player* player;
 
-
 public:
 	CREATE_FUNC(Stage1);
 

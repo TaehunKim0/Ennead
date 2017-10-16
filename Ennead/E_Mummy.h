@@ -3,9 +3,10 @@ class E_Mummy : public Enemy
 {
 private:
 	Sprite* mummy;
-
+	
 
 public:
+	BoxCollider* m_Collision;
 	E_Mummy();
 	~E_Mummy();
 
@@ -14,5 +15,6 @@ public:
 	bool Init(Vector2 pos);
 	void Update(float deltaTime);
 	void Render();
-};
 
+	void OnCollision(GameObject* other);
+};
