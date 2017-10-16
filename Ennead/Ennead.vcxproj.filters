@@ -29,6 +29,13 @@
     <ClCompile Include="EffectMgr.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
+    <ClCompile Include="EnemySpawner.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="E_Mummy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -48,6 +55,9 @@
     </Filter>
     <Filter Include="Effect">
       <UniqueIdentifier>{e5e0d871-b71b-460d-8fef-f13ebf0c3620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy">
+      <UniqueIdentifier>{d1fff83c-4fdc-44dc-9bbd-4f96d0e527ed}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,5 +88,12 @@
     <ClInclude Include="Effect.h">
       <Filter>Effect</Filter>
     </ClInclude>
+    <ClInclude Include="EnemySpawner.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="E_Mummy.h" />
   </ItemGroup>
 </Project>
