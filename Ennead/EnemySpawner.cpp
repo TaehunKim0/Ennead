@@ -2,6 +2,8 @@
 #include "EnemySpawner.h"
 #include"E_Mummy.h"
 #include"E_Eagle.h"
+#include"E_Anubis.h"
+
 EnemySpawner::EnemySpawner()
 {
 }
@@ -32,6 +34,9 @@ void EnemySpawner::SpawnEnemy(Vector2 pos, EnemyName name)
 
 	if (name == EnemyName::Eagle)
 		AddChild(E_Eagle::Create(pos));
+
+	if (name == EnemyName::Anubis)
+		AddChild(E_Anubis::Create(pos));
 
 }
 

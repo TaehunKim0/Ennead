@@ -23,7 +23,7 @@ bool Stage1::Init()
 	player->SetPosition(850, 500);
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
 	
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(700, 0), EnemyName::Eagle);
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(700, 0), EnemyName::Anubis);
 
 	AddChild(Map1);
 	AddChild(player);

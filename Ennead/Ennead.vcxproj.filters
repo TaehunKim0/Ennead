@@ -29,17 +29,20 @@
     <ClCompile Include="EffectMgr.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
-    <ClCompile Include="E_Eagle.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="E_Mummy.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
     <ClCompile Include="EnemySpawner.cpp">
       <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="E_Mummy.cpp">
+      <Filter>Enemy\Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="E_Eagle.cpp">
+      <Filter>Enemy\Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="E_Anubis.cpp">
+      <Filter>Enemy\Stage1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +66,9 @@
     </Filter>
     <Filter Include="Enemy">
       <UniqueIdentifier>{93293b71-03eb-4ea2-8816-4e7a3306c528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy\Stage1">
+      <UniqueIdentifier>{4fa63ac4-f194-4a0b-bb1d-0fa098cd724d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -93,17 +99,20 @@
     <ClInclude Include="Effect.h">
       <Filter>Effect</Filter>
     </ClInclude>
-    <ClInclude Include="E_Eagle.h">
-      <Filter>Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="E_Mummy.h">
-      <Filter>Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="EnemySpawner.h">
       <Filter>Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="E_Mummy.h">
+      <Filter>Enemy\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="E_Eagle.h">
+      <Filter>Enemy\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="E_Anubis.h">
+      <Filter>Enemy\Stage1</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

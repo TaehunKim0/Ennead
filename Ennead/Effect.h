@@ -6,7 +6,7 @@ private:
 
 public:
 	Effect();
-	~Effect();
+	~Effect(); 
 
 	void Update(float deltaTime);
 	void Render();

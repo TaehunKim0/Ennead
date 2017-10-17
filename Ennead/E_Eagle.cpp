@@ -30,6 +30,8 @@ bool E_Eagle::Init(Vector2 pos)
 	m_Position = pos;
 	eagle = Sprite::Create(L"Resources/Enemy/E_Eagle.png");
 
+	m_Size = Vector2(82, 74);
+
 	m_Collision = BoxCollider::Create(m_Position, m_Size);
 
 	m_Tag = Tag::Enemy;
