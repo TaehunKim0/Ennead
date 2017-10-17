@@ -33,7 +33,7 @@ bool E_Mummy::Init(Vector2 pos)
 	Enemy::Init(pos);
 
 	mummy = Sprite::Create(L"Resources/Enemy/E_Mummy.png");
-	m_Size = Vector2(296, 296);
+	m_Size = Vector2(80, 100);
 
 	m_Collision = BoxCollider::Create(m_Position, m_Size);
 

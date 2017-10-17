@@ -5,7 +5,6 @@ Stage1::Stage1()
 {
 }
 
-
 Stage1::~Stage1()
 {
 }
@@ -23,7 +22,12 @@ bool Stage1::Init()
 	player->SetPosition(850, 500);
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
 	
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(700, 0), EnemyName::Anubis);
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(900, 0), EnemyName::Eagle); //시간 조절해서 생성하자
+
+	/*EnemySpawner::GetInstance()->SpawnEnemy(Vector2(810, -74), EnemyName::Eagle);
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(720, -148), EnemyName::Eagle);
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(630, -212), EnemyName::Eagle);*/
+
 
 	AddChild(Map1);
 	AddChild(player);

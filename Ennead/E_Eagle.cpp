@@ -7,6 +7,7 @@ E_Eagle::E_Eagle()
 	radius = 10.f;
 	radius = D3DXToRadian(radius);
 	m_Speed = 3.f;
+	c = 0.f;
 }
 
 E_Eagle::~E_Eagle()
@@ -52,13 +53,16 @@ void E_Eagle::Update(float deltaTime)
 {
 	Enemy::Update(deltaTime);
 
-	Move();
+	//for (int i = 1; i < 100;)
+	//	radius = -190.f * -i;
 
-	if (m_Position.x >= 1200)
-	{
-		radius = -190.f;
-		radius = D3DXToRadian(radius);
-	}
+	//if (m_Position.x >= 1200)
+	//{
+	//	radius = -190.f;
+	//	radius = D3DXToRadian(radius);
+	//}
+
+	Move();
 
 	m_Collision->SetPosition(m_Position);
 
@@ -77,7 +81,12 @@ void E_Eagle::Render()
 
 void E_Eagle::Move()
 {
-	SetPosition(cos(radius)*m_Speed, sin(radius)*m_Speed);
+	c += 0.05f;
+
+	printf("C : %f \n", c);
+
+	SetPosition(cos(c) * 10, 1);
+	
 }
 
 void E_Eagle::OnCollision(GameObject * other)

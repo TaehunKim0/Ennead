@@ -177,6 +177,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="RBullet.cpp" />
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
@@ -194,6 +195,7 @@
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PrevHeader.h" />
+    <ClInclude Include="RBullet.h" />
     <ClInclude Include="Stage1.h" />
   </ItemGroup>
   <ItemGroup>

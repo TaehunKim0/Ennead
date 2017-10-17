@@ -3,8 +3,10 @@
 
 
 E_Anubis::E_Anubis()
+	:Frame(0)
 {
 	m_Speed = 1.f;
+	m_State = EnemyState::Move;
 }
 
 E_Anubis::~E_Anubis()
@@ -55,6 +57,12 @@ void E_Anubis::Update(float deltaTime)
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}
+	if (Frame % 10 == 60)
+	{
+		m_State = EnemyState::Attack;
+	}
+
+	Frame++;
 
 }
 
@@ -69,4 +77,30 @@ void E_Anubis::OnCollision(GameObject * other)
 	{
 		m_Health -= 1;
 	}
+}
+
+void E_Anubis::MoveAttackCheck()
+{
+	switch (m_State)
+	{
+	case EnemyState::Move:
+		Move();
+		break;
+
+	case EnemyState::Attack:
+		Attack();
+		break;
+
+	}
+}
+
+void E_Anubis::Move()
+{
+
+}
+
+void E_Anubis::Attack()
+{
+	//if(창을 던지고 나서)
+	//m_State = Move;
 }

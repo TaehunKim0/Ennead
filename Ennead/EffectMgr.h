@@ -8,6 +8,6 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-	//void CreateEffect
+	//CreateEffect
 };
 

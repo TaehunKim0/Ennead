@@ -25,6 +25,12 @@ void BulletMgr::Release()
 {
 }
 
+void BulletMgr::CreateRBullet(Vector2 pos, std::wstring img, Tag tag, float radius)
+{
+	auto rbullet = RBullet::Create(pos, img, tag, radius);
+	AddChild(rbullet);
+}
+
 void BulletMgr::CreateBullet(Vector2 pos, std::wstring img, Tag tag)
 {
 	auto bullet = Bullet::Create(pos, img.c_str(), tag);

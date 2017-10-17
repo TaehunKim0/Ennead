@@ -4,6 +4,8 @@ class E_Anubis : public Enemy
 private:
 	Sprite* anubis;
 
+	int Frame;
+
 public:
 	E_Anubis();
 	~E_Anubis();
@@ -16,5 +18,11 @@ public:
 	void Render();
 
 	void OnCollision(GameObject* other);
-};
 
+public:
+	void MoveAttackCheck();
+
+	void Move();
+	void Attack();
+	void ThrowSpear(Vector2 targetPosition, int throwSpeed);
+};

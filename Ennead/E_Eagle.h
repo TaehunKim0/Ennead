@@ -5,6 +5,7 @@ private:
 	Animation* Flying;
 	Sprite * eagle;
 	float radius;
+	float c;
 
 public:
 	E_Eagle();

@@ -21,7 +21,7 @@ protected:
 	int m_Speed;
 
 	EnemyName m_EName;
-
+	EnemyState m_State;
 public:
 	Enemy();
 	~Enemy();

@@ -48,6 +48,7 @@ bool Bullet::Init(Vector2 pos, std::wstring img, Tag tag)
 void Bullet::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+
 	if (IsCollide)
 	{
 		CollisionMgr::GetInstance()->Destroy(m_Collision);

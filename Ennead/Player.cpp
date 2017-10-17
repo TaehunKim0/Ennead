@@ -52,6 +52,8 @@ bool Player::Init()
 	player = Sprite::Create(L"Resources/Anubis.png");
 	m_Tag = Tag::Player;
 
+	m_Size = Vector2(95, 204);
+
 	m_Collision = BoxCollider::Create(m_Position, m_Size);
 
 	CollisionMgr::GetInstance()->AddBoxCollider(m_Collision);
@@ -192,5 +194,9 @@ void Player::Attack()
 	if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::Up)
 	{
 		BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player);
+
+		BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, -65.f);
+
+		BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, -20.f);
 	}
 }

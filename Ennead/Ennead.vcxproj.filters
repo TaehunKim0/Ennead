@@ -20,9 +20,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Player</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>Object</Filter>
-    </ClCompile>
     <ClCompile Include="Effect.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
@@ -44,6 +41,12 @@
     <ClCompile Include="E_Anubis.cpp">
       <Filter>Enemy\Stage1</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="RBullet.cpp">
+      <Filter>Bullet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -54,9 +57,6 @@
     </Filter>
     <Filter Include="PrevHeader">
       <UniqueIdentifier>{cc9b412c-6126-4c8f-82b1-d8d17ca0cad4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object">
-      <UniqueIdentifier>{7721b051-1390-4d28-b819-2664175b82ec}</UniqueIdentifier>
     </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{239dc31b-624f-4580-83e7-ec81636bad2b}</UniqueIdentifier>
@@ -69,6 +69,9 @@
     </Filter>
     <Filter Include="Enemy\Stage1">
       <UniqueIdentifier>{4fa63ac4-f194-4a0b-bb1d-0fa098cd724d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullet">
+      <UniqueIdentifier>{060ae527-ae61-4f55-8958-d0023084a268}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +89,6 @@
     </ClInclude>
     <ClInclude Include="PrevHeader.h">
       <Filter>PrevHeader</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="BulletMgr.h">
       <Filter>Manager</Filter>
@@ -113,6 +113,12 @@
     </ClInclude>
     <ClInclude Include="E_Anubis.h">
       <Filter>Enemy\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="RBullet.h">
+      <Filter>Bullet</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

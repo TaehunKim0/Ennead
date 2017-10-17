@@ -12,7 +12,7 @@ public:
 	void Render();
 	void Release();
 
-
+	void CreateRBullet(Vector2 pos, std::wstring img, Tag tag, float radius);
 	void CreateBullet(Vector2 pos, std::wstring img, Tag tag);
 };
 
