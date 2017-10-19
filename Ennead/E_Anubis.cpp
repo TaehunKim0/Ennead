@@ -4,6 +4,7 @@
 
 E_Anubis::E_Anubis()
 	:Frame(0)
+	, KeepTime(0)
 {
 	m_Speed = 1.f;
 	m_State = EnemyState::Move;
@@ -51,18 +52,30 @@ void E_Anubis::Release()
 void E_Anubis::Update(float deltaTime)
 {
 	Enemy::Update(deltaTime);
+	MoveAttackCheck();
 
 	if (m_Health <= 0)
 	{
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}
-	if (Frame % 10 == 60)
+
+	printf("Frame : %d\n", Frame);
+
+	if (m_State == EnemyState::Attack)
+		printf("Attack \n");
+
+	if (m_State == EnemyState::Move)
+		printf("Move \n");
+
+	if (Frame / 60  == 2)
 	{
 		m_State = EnemyState::Attack;
+		Frame = 0;
 	}
 
-	Frame++;
+	if(m_State == EnemyState::Move)
+		Frame++;
 
 }
 
@@ -96,11 +109,33 @@ void E_Anubis::MoveAttackCheck()
 
 void E_Anubis::Move()
 {
-
+	SetPosition(0.f, 0.1f);
 }
 
 void E_Anubis::Attack()
 {
+	radius = 20.f;
+	radius = D3DXToRadian(radius);
+	++KeepTime;
+
+	if(KeepTime < 60 * 2)
+		SetPosition(cos(radius), sin(radius));
+
+	else
+	{
+		ThrowSpear(Player::GetInstance()->GetPosition(),3.f);
+		KeepTime = 0;
+	}
+
 	//if(창을 던지고 나서)
 	//m_State = Move;
+}
+
+void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
+{
+	double angle = getAngle(m_Position , targetPosition);
+
+	BulletMgr::GetInstance()->CreateRBullet(m_Position, L"Resources/Bullet.png", Tag::Enemy, 70, throwSpeed);
+
+	m_State = EnemyState::Move;
 }

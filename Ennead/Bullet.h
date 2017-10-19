@@ -14,6 +14,7 @@ public:
 
 	static Bullet* Create(Vector2 pos, std::wstring img, Tag tag);
 
+	void SetSpeed(float speed) { m_Speed = speed; }
 	void Release();
 	bool Init(Vector2 pos,std::wstring img, Tag tag);
 	void Update(float deltaTime);

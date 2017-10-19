@@ -14,6 +14,7 @@ public:
 
 	static RBullet* Create(Vector2 pos, std::wstring img, Tag tag, float radius);
 
+	void SetSpeed(float speed) { m_Speed = speed; }
 	void Release();
 	bool Init(Vector2 pos, std::wstring img, Tag tag, float radius);
 	void Update(float deltaTime);

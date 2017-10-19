@@ -25,11 +25,18 @@ enum class PlayerState
 class Player : public GameObject
 {
 private:
+	static Player* m_Instance;
+
+public:
+	static Player* GetInstance();
+	static void ReleaseInstance();
+
+private:
 	int m_Health;
 	int m_Speed;
 	bool checkInput;
 
-	Sprite* player;
+	Sprite* pplayer;
 
 	Animation* Straight;
 	Animation* Left;
@@ -47,6 +54,7 @@ public:
 
 	void SetAnimWithClass(PlayerClass job);
 
+	
 
 	bool Init();
 	void Update(float deltaTime);

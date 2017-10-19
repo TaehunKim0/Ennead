@@ -56,14 +56,17 @@ void RBullet::Update(float deltaTime)
 
 	if (m_Tag == Tag::Player)
 	{
-		SetPosition(cos(m_Radius) * m_Speed,sin(m_Radius) *m_Speed);
+		//m_Radius = (m_Radius * 180) / Math_PI;
+		auto Radius = D3DXToRadian(m_Radius);
+
+		SetPosition(cos(Radius) * m_Speed,sin(Radius) *m_Speed);
 	}
 
 	if (m_Tag == Tag::Enemy)
 	{
-		SetPosition(-cos(m_Radius),-sin(m_Radius));
+		auto Radius = (m_Radius * 180) / Math_PI;
+		SetPosition(cos(Radius)* m_Speed, sin(Radius)*m_Speed);
 	}
-
 }
 
 void RBullet::Render()

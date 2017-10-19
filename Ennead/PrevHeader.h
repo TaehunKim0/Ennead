@@ -1,4 +1,5 @@
 #pragma once
+#define Math_PI 3.14159f
 
 #include"PCH.h"
 #include"Player.h"

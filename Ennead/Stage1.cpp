@@ -16,13 +16,13 @@ void Stage1::Release()
 bool Stage1::Init()
 {
 	Scene::Init();
-	player = new Player();
+	player = Player::GetInstance();
 	player->Init();
 
 	player->SetPosition(850, 500);
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
 	
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(900, 0), EnemyName::Eagle); //시간 조절해서 생성하자
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(600, 0), EnemyName::Anubis); //시간 조절해서 생성하자
 
 	/*EnemySpawner::GetInstance()->SpawnEnemy(Vector2(810, -74), EnemyName::Eagle);
 	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(720, -148), EnemyName::Eagle);

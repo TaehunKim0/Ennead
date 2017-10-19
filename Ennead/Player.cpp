@@ -1,6 +1,7 @@
 #include"PrevHeader.h"
 #include "Player.h"
 
+Player* Player::m_Instance = nullptr;
 
 Player::Player()
 	: m_Health(1)
@@ -47,9 +48,30 @@ void Player::SetAnimWithClass(PlayerClass job)
 	}
 }
 
+Player * Player::GetInstance()
+{
+	if (m_Instance == nullptr)
+	{
+		m_Instance = new Player();
+	}
+
+	return m_Instance;
+
+
+	return nullptr;
+}
+
+void Player::ReleaseInstance()
+{
+	if (m_Instance != nullptr)
+	{
+		SAFE_REDELETE(m_Instance);
+	}
+}
+
 bool Player::Init()
 {
-	player = Sprite::Create(L"Resources/Anubis.png");
+	pplayer = Sprite::Create(L"Resources/Anubis.png");
 	m_Tag = Tag::Player;
 
 	m_Size = Vector2(95, 204);
@@ -58,7 +80,7 @@ bool Player::Init()
 
 	CollisionMgr::GetInstance()->AddBoxCollider(m_Collision);
 
-	AddChild(player);
+	AddChild(pplayer);
 	AddChild(m_Collision);
 
 	return true;
@@ -193,9 +215,9 @@ void Player::Attack()
 {
 	if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::Up)
 	{
-		BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player);
+		BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player,5.f);
 
-		//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, -65.f);
+		//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 17.f , 5.f);
 
 		//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, -20.f);
 	}

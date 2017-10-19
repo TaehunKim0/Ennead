@@ -30,5 +30,10 @@ public:
 	bool Init(Vector2 pos);
 	void Update(float deltaTime);
 	void Render();
+
+
+
 };
 
+//void Idle() Enemy 들의 공통 Idle
+//void OnIdle() Enemy 를 상속받은 각각의 Idle
