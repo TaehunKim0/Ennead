@@ -23,9 +23,6 @@
     <ClCompile Include="Effect.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
-    <ClCompile Include="EffectMgr.cpp">
-      <Filter>Effect</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
@@ -47,6 +44,7 @@
     <ClCompile Include="RBullet.cpp">
       <Filter>Bullet</Filter>
     </ClCompile>
+    <ClCompile Include="EffectFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -93,9 +91,6 @@
     <ClInclude Include="BulletMgr.h">
       <Filter>Manager</Filter>
     </ClInclude>
-    <ClInclude Include="EffectMgr.h">
-      <Filter>Effect</Filter>
-    </ClInclude>
     <ClInclude Include="Effect.h">
       <Filter>Effect</Filter>
     </ClInclude>
@@ -120,5 +115,6 @@
     <ClInclude Include="RBullet.h">
       <Filter>Bullet</Filter>
     </ClInclude>
+    <ClInclude Include="EffectFactory.h" />
   </ItemGroup>
 </Project>
