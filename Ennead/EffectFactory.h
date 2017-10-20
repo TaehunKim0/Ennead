@@ -1,8 +1,15 @@
 #pragma once
-class EffectFactory
+class EffectFactory: public Singleton<EffectFactory>
 {
+private:
+	
+
 public:
 	EffectFactory();
 	~EffectFactory();
+
+	void CreateDeadEffect();
+	void CreateColliderEffect();
+
 };
 

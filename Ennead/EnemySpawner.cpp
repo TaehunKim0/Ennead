@@ -5,6 +5,9 @@
 #include"E_Anubis.h"
 
 EnemySpawner::EnemySpawner()
+	: Frame(0)
+	, WaitEnd(0)
+	,waitTime(0)
 {
 }
 
@@ -20,6 +23,8 @@ void EnemySpawner::Release()
 void EnemySpawner::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+
+
 }
 
 void EnemySpawner::Render()
@@ -27,9 +32,9 @@ void EnemySpawner::Render()
 	GameObject::Render();
 }
 
-void EnemySpawner::SpawnEnemy(Vector2 pos, EnemyName name)
+void EnemySpawner::SpawnEnemy(Vector2 pos, EnemyName name, int waitTime)
 {
-	if(name == EnemyName::Mummy)
+	if (name == EnemyName::Mummy)
 		AddChild(E_Mummy::Create(pos));
 
 	if (name == EnemyName::Eagle)
@@ -37,7 +42,6 @@ void EnemySpawner::SpawnEnemy(Vector2 pos, EnemyName name)
 
 	if (name == EnemyName::Anubis)
 		AddChild(E_Anubis::Create(pos));
-
 }
 
 void EnemySpawner::RandomSpawnEnemy(int y)

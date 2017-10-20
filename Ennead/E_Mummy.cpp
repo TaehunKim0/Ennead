@@ -17,6 +17,7 @@ E_Mummy * E_Mummy::Create(Vector2 pos)
 	auto mummy = new (std::nothrow) E_Mummy();
 	if (mummy && mummy->Init(pos))
 	{
+		
 		return mummy;
 	}
 	SAFE_DELETE(mummy);

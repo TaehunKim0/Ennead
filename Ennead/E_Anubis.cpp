@@ -60,13 +60,13 @@ void E_Anubis::Update(float deltaTime)
 		Destroy();
 	}
 
-	printf("Frame : %d\n", Frame);
+	//printf("Frame : %d\n", Frame);
 
-	if (m_State == EnemyState::Attack)
-		printf("Attack \n");
+	/*if (m_State == EnemyState::Attack)
+		printf("Attack \n");*/
 
-	if (m_State == EnemyState::Move)
-		printf("Move \n");
+	/*if (m_State == EnemyState::Move)
+		printf("Move \n");*/
 
 	if (Frame / 60  == 2)
 	{
