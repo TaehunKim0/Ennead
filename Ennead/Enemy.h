@@ -31,8 +31,6 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-
-
 };
 
 //void Idle() Enemy 들의 공통 Idle

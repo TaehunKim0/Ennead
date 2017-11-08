@@ -4,6 +4,9 @@ class Stage1 : public Scene
 private:
 	Sprite* Map1;
 	Player* player;
+
+	int SpawnTime;
+
 public:
 	CREATE_FUNC(Stage1);
 
@@ -14,4 +17,5 @@ public:
 	bool Init();
 	void Update(float deltaTime);
 	void Render();
+	void SpawnEnemys();
 };

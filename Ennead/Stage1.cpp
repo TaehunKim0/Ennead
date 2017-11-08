@@ -3,6 +3,7 @@
 
 Stage1::Stage1()
 {
+	SpawnTime = 0;
 }
 
 Stage1::~Stage1()
@@ -21,15 +22,8 @@ bool Stage1::Init()
 
 	player->SetPosition(850, 500);
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
-	
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(600, 0), EnemyName::Anubis, 60 * 2);
- //시간 조절해서 생성하자
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(600, 0), EnemyName::Anubis, 60 * 3);
 
-	/*EnemySpawner::GetInstance()->SpawnEnemy(Vector2(810, -74), EnemyName::Eagle);
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(720, -148), EnemyName::Eagle);
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(630, -212), EnemyName::Eagle);*/
-
+	//시간 조절해서 생성하자
 
 	AddChild(Map1);
 	AddChild(player);
@@ -42,6 +36,13 @@ bool Stage1::Init()
 
 void Stage1::Update(float deltaTime)
 {
+	SpawnTime++;
+	if (SpawnTime == 30)
+	{
+		SpawnEnemys();
+		SpawnTime = 0;
+	}
+
 	GameObject::Update(deltaTime);
 	//BulletMgr::GetInstance()->Update(deltaTime); <-BulletMgr 는 클래스안에 인스턴스르 만들자 //씬이 릴리즈 하지말고 따로 초기화 하자
 
@@ -63,4 +64,12 @@ void Stage1::Render()
 {
 	GameObject::Render();
 	//BulletMgr::GetInstance()->Render();
+}
+
+void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
+{
+	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(600, 0), EnemyName::Eagle, 60 * 2);
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, 0), EnemyName::Eagle, 60 * 2);
+	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1000, 0), EnemyName::Eagle, 60 * 2);
+	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1200, 0), EnemyName::Eagle, 60 * 2);
 }

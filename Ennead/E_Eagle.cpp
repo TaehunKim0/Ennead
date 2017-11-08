@@ -81,11 +81,11 @@ void E_Eagle::Render()
 
 void E_Eagle::Move()
 {
-	c += 0.05f;
+	c += 0.02f;
 
 	printf("C : %f \n", c);
 
-	SetPosition(cos(c) * 10, 1);
+	SetPosition(cos(c) * 5, 1);
 	
 }
 

@@ -36,6 +36,8 @@ bool RBullet::Init(Vector2 pos, std::wstring img, Tag tag, float radius)
 	m_Tag = tag;
 	m_Radius =  radius;
 
+	m_Size = { 50.f,50.f };
+
 	m_Collision = BoxCollider::Create(m_Position, m_Size);
 
 	AddChild(m_Collision);
@@ -76,5 +78,9 @@ void RBullet::Render()
 
 void RBullet::OnCollision(GameObject * other)
 {
+	if (other)
+	{
+		IsCollide = 1;
+	}
 
 }

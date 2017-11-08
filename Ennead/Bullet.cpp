@@ -35,7 +35,7 @@ bool Bullet::Init(Vector2 pos, std::wstring img, Tag tag)
 	m_Position = pos;
 	m_bullet = Sprite::Create(img.c_str());
 	m_Tag = tag;
-
+	m_Size = { 50.f,50.f };
 	m_Collision = BoxCollider::Create(m_Position, m_Size);
 
 	AddChild(m_Collision);
