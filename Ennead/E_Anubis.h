@@ -2,20 +2,16 @@
 class E_Anubis : public Enemy
 {
 private:
-	int getAngle(Vector2 mPosition,Vector2 targetPosition )
-	{
-		int dx = static_cast<int>(targetPosition.x - mPosition.x);
-		int dy = static_cast<int>(targetPosition.y - mPosition.y);
+	
+	 float GetAngle(Vector2 p1, Vector2 p2)
+	 {
+		float xdf = p2.x - p1.x;
+		float ydf = p2.y - p1.y;
 
-		double rad = atan2(dx, dy);
-
-		double degree = (rad * 180) / Math_PI;
-
-		printf("Degree : %lf", degree);
-
-		return degree;
+		float ang = D3DXToRadian((atan2(ydf, xdf)));
+		return ang;
 	}
-
+	
 private:
 	Sprite* anubis;
 

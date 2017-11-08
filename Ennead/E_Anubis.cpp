@@ -119,11 +119,11 @@ void E_Anubis::Attack()
 	++KeepTime;
 
 	if(KeepTime < 60 * 2)
-		SetPosition(cos(radius), sin(radius));
+		SetPosition(cos(radius*3.f), sin(radius*3.f));
 
 	else
 	{
-		ThrowSpear(Player::GetInstance()->GetPosition(),3.f);
+		ThrowSpear(Player::GetInstance()->GetPosition(),10.f);
 		KeepTime = 0;
 	}
 
@@ -133,9 +133,9 @@ void E_Anubis::Attack()
 
 void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
 {
-	double angle = getAngle(m_Position , targetPosition);
+	float angle = GetAngle(m_Position , targetPosition);
 
-	BulletMgr::GetInstance()->CreateRBullet(m_Position, L"Resources/Bullet.png", Tag::Enemy, 70, throwSpeed);
+	BulletMgr::GetInstance()->CreateRBullet(m_Position, L"Resources/Bullet.png", Tag::Enemy, angle, throwSpeed);
 
 	m_State = EnemyState::Move;
 }
