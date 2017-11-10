@@ -42,6 +42,9 @@ private:
 	Animation* Left;
 	Animation* Right;
 
+	int latingTime;
+	bool CanAttack;
+
 public:
 	//BoxCollider* m_Collision;
 

@@ -4,7 +4,12 @@
 Stage1::Stage1()
 {
 	SpawnTime = 0;
+	
+	
+
 }
+
+
 
 Stage1::~Stage1()
 {
@@ -19,9 +24,11 @@ bool Stage1::Init()
 	Scene::Init();
 	player = Player::GetInstance();
 	player->Init();
-
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Anubis, 60 * 2);
 	player->SetPosition(850, 500);
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
+	srand(time(NULL));
+	
 
 	//시간 조절해서 생성하자
 
@@ -34,12 +41,14 @@ bool Stage1::Init()
 	return true;
 }
 
+
+
 void Stage1::Update(float deltaTime)
 {
 	SpawnTime++;
-	if (SpawnTime == 30)
+	if (SpawnTime == 40)
 	{
-		SpawnEnemys();
+		//SpawnEnemys();
 		SpawnTime = 0;
 	}
 
@@ -68,8 +77,29 @@ void Stage1::Render()
 
 void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
 {
+	int randomX = 0;
+	int randomMonster = 0;
+	
+	randomX = (rand() % 800) + 600;
+	randomMonster = (rand() % 3) + 1;
+
+	printf("randomX = %d\n", randomX);
+	printf("randomMonster = %d\n", randomMonster);
+
+	//아누비스 
+	if(randomMonster == 1)
+		EnemySpawner::GetInstance()->SpawnEnemy(Vector2(randomX, -100), EnemyName::Anubis, 60 * 2);
+
+	//독수리
+	if (randomMonster == 2)
+		EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Eagle, 60 * 2);
+
+	//미라
+	if (randomMonster == 3)
+		EnemySpawner::GetInstance()->SpawnEnemy(Vector2(randomX, -100), EnemyName::Mummy, 60 * 2);
+
 	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(600, 0), EnemyName::Eagle, 60 * 2);
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, 0), EnemyName::Eagle, 60 * 2);
+	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, 0), EnemyName::Anubis, 60 * 2);
 	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1000, 0), EnemyName::Eagle, 60 * 2);
 	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1200, 0), EnemyName::Eagle, 60 * 2);
 }

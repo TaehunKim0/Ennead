@@ -59,7 +59,8 @@ void E_Mummy::Update(float deltaTime)
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}
-	SetPosition(0.f, 1.f);
+
+	SetPosition(0.f, 3.f);
 
 }
 

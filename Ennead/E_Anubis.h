@@ -1,4 +1,12 @@
 #pragma once
+
+enum class AnubisDirection
+{
+	None,
+	Left = 1,
+	Right
+};
+
 class E_Anubis : public Enemy
 {
 private:
@@ -19,6 +27,8 @@ private:
 	float radius;
 
 	int KeepTime;
+
+	AnubisDirection m_Direction;
 
 public:
 	E_Anubis();

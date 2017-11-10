@@ -8,6 +8,7 @@ E_Anubis::E_Anubis()
 {
 	m_Speed = 1.f;
 	m_State = EnemyState::Move;
+	m_Direction = AnubisDirection::Left;
 }
 
 E_Anubis::~E_Anubis()
@@ -60,14 +61,7 @@ void E_Anubis::Update(float deltaTime)
 		Destroy();
 	}
 
-	//printf("Frame : %d\n", Frame);
-
-	/*if (m_State == EnemyState::Attack)
-		printf("Attack \n");*/
-
-	/*if (m_State == EnemyState::Move)
-		printf("Move \n");*/
-
+	/////////////////////////
 	if (Frame / 60  == 2)
 	{
 		m_State = EnemyState::Attack;
@@ -76,7 +70,7 @@ void E_Anubis::Update(float deltaTime)
 
 	if(m_State == EnemyState::Move)
 		Frame++;
-
+	
 }
 
 void E_Anubis::Render()
@@ -114,21 +108,36 @@ void E_Anubis::Move()
 
 void E_Anubis::Attack()
 {
+
+	//+90
+
 	radius = 20.f;
 	radius = D3DXToRadian(radius);
 	++KeepTime;
 
-	if(KeepTime < 60 * 2)
-		SetPosition(cos(radius*3.f), sin(radius*3.f));
+	if (KeepTime < 60 * 2)
+	{
+		switch (m_Direction)
+		{
+		case AnubisDirection::Left:
+			if (KeepTime < 60 * 2)
+				SetPosition(cos((60)*3.f), sin((60 )*3.f));
 
+			break;
+
+		case AnubisDirection::Right:
+			if (KeepTime < 60 * 2)
+				SetPosition(cos(radius*3.f), sin(radius*3.f));
+
+			break;
+		}
+
+	}
 	else
 	{
 		ThrowSpear(Player::GetInstance()->GetPosition(),10.f);
 		KeepTime = 0;
 	}
-
-	//if(창을 던지고 나서)
-	//m_State = Move;
 }
 
 void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)

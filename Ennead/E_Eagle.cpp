@@ -83,7 +83,7 @@ void E_Eagle::Move()
 {
 	c += 0.02f;
 
-	printf("C : %f \n", c);
+	
 
 	SetPosition(cos(c) * 5, 1);
 	
@@ -91,6 +91,9 @@ void E_Eagle::Move()
 
 void E_Eagle::OnCollision(GameObject * other)
 {
+	if (other->GetTag() == Tag::None)
+		return;
+
 	if (other->GetTag() == Tag::Player)
 	{
 		m_Health -= 1;

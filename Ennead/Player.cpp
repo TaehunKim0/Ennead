@@ -90,10 +90,15 @@ void Player::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	m_Collision->SetPosition(m_Position);
-
 	if (m_Health <= 0)
+	{
+		CollisionMgr::GetInstance()->Destroy(m_Collision);
+		Destroy();
+
 		printf("Player dead\n");
+	}
+
+	m_Collision->SetPosition(m_Position);
 
 	Move();
 	Attack();
@@ -120,6 +125,7 @@ void Player::Update(float deltaTime)
 
 		}
 	}
+
 
 }
 
@@ -157,8 +163,11 @@ void Player::Release()
 
 void Player::OnCollision(GameObject * other)
 {
+	if (other->GetTag() == Tag::None)
+		return;
+
 	if (other->GetTag() == Tag::Enemy)
-		m_Health -= 1;
+		m_Health == 1;
 
 
 
@@ -208,17 +217,24 @@ void Player::Move()
 	if (!checkInput)
 		pState = PlayerState::Idle;
 
+	latingTime++;
+	if (latingTime >= 40)
+		CanAttack = 1;
 
 }
 
 void Player::Attack()
 {
-	if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::Up)
-	{
-		BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player,5.f);
+	if(CanAttack)
+		if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::Up)
+		{
+			latingTime = 0;
+			CanAttack = 0;
+			BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 5.f);
 
-		//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 17.f , 5.f);
+			//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 17.f , 5.f);
 
-		//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, -20.f);
-	}
+			//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, -20.f);
+		}
+	
 }
