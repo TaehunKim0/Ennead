@@ -71,7 +71,9 @@ void Player::ReleaseInstance()
 
 bool Player::Init()
 {
-	pplayer = Sprite::Create(L"Resources/Anubis.png");
+	pplayer = Sprite::Create(L"Resources/Player.png");
+	pplayer->SetScale(Vector2(0.25f, 0.25f));
+
 	m_Tag = Tag::Player;
 
 	m_Size = Vector2(95, 204);
@@ -230,7 +232,8 @@ void Player::Attack()
 		{
 			latingTime = 0;
 			CanAttack = 0;
-			BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 5.f);
+
+			BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(15.f, -10.f), L"Resources/sword.png", Tag::Player, 5.f);
 
 			//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 17.f , 5.f);
 

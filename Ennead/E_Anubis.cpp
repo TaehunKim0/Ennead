@@ -8,7 +8,7 @@ E_Anubis::E_Anubis()
 {
 	m_Speed = 1.f;
 	m_State = EnemyState::Move;
-	m_Direction = AnubisDirection::Left;
+	m_Direction = AnubisDirection::Right;
 }
 
 E_Anubis::~E_Anubis()

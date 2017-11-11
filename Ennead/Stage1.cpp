@@ -48,7 +48,7 @@ void Stage1::Update(float deltaTime)
 	SpawnTime++;
 	if (SpawnTime == 40)
 	{
-		//SpawnEnemys();
+		SpawnEnemys();
 		SpawnTime = 0;
 	}
 
