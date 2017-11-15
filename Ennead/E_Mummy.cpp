@@ -31,19 +31,7 @@ void E_Mummy::Release()
 
 bool E_Mummy::Init(Vector2 pos)
 {
-	Enemy::Init(pos);
-
-	mummy = Sprite::Create(L"Resources/Enemy/E_Mummy.png");
-	m_Size = Vector2(80, 100);
-
-	m_Collision = BoxCollider::Create(m_Position, m_Size);
-
-	m_Position = pos;
-	m_Tag = Tag::Enemy;
-	m_EName = EnemyName::Mummy;
-
-	AddChild(mummy);
-	AddChild(m_Collision);
+	Enemy::Init(pos, L"Resources/Enemy/E_Mummy.png",EnemyName::Mummy);
 
 	return true;
 }

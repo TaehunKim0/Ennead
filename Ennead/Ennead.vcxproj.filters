@@ -71,6 +71,12 @@
     <Filter Include="Bullet">
       <UniqueIdentifier>{060ae527-ae61-4f55-8958-d0023084a268}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enemy\Stage2">
+      <UniqueIdentifier>{d893dba8-a339-4ee3-a3ab-13b0251e1e96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy\Stage3">
+      <UniqueIdentifier>{1c2a8fec-bbdb-4b1d-8ff5-68ffe2f9c663}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MenuScene.h">

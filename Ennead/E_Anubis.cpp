@@ -29,18 +29,7 @@ E_Anubis * E_Anubis::Create(Vector2 pos)
 
 bool E_Anubis::Init(Vector2 pos)
 {
-	m_Position = pos;
-	anubis = Sprite::Create(L"Resources/Enemy/E_Anubis.png");
-
-	m_Size = Vector2(80, 100);
-
-	m_Collision = BoxCollider::Create(pos, m_Size);
-
-	m_Tag = Tag::Enemy;
-	m_EName = EnemyName::Anubis;
-
-	AddChild(anubis);
-	AddChild(m_Collision);
+	Enemy::Init(pos, L"Resources/Enemy/E_Anubis.png", EnemyName::Anubis);
 
 	return true;
 }

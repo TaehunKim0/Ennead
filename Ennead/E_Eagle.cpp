@@ -28,20 +28,10 @@ E_Eagle * E_Eagle::Create(Vector2 pos)
 
 bool E_Eagle::Init(Vector2 pos)
 {
-	m_Position = pos;
-	eagle = Sprite::Create(L"Resources/Enemy/E_Eagle.png");
-
-	m_Size = Vector2(82, 74);
-
-	m_Collision = BoxCollider::Create(m_Position, m_Size);
-
-	m_Tag = Tag::Enemy;
-	m_EName = EnemyName::Eagle;
-
-	AddChild(m_Collision);
-	AddChild(eagle);
+	Enemy::Init(pos, L"Resources/Enemy/E_Eagle.png", EnemyName::Eagle);
 
 	return true;
+
 }
 
 void E_Eagle::Release()

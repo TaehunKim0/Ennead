@@ -16,6 +16,7 @@ enum class EnemyName
 class Enemy : public GameObject
 {
 protected:
+	Sprite* m_Sprite;
 
 	int m_Health;
 	int m_Speed;
@@ -27,7 +28,7 @@ public:
 	~Enemy();
 
 	void Release();
-	bool Init(Vector2 pos);
+	bool Init(Vector2 pos,std::wstring fileName, EnemyName name);
 	void Update(float deltaTime);
 	void Render();
 
