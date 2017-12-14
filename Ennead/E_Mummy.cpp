@@ -31,7 +31,7 @@ void E_Mummy::Release()
 
 bool E_Mummy::Init(Vector2 pos)
 {
-	Enemy::Init(pos, L"Resources/Enemy/E_Mummy.png",EnemyName::Mummy);
+	//Enemy::Init(pos, L"Resources/Enemy/E_Mummy.png",EnemyName::Mummy);
 
 	return true;
 }

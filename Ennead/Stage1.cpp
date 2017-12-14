@@ -24,7 +24,7 @@ bool Stage1::Init()
 	Scene::Init();
 	player = Player::GetInstance();
 	player->Init();
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Anubis, 60 * 2);
+	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Anubis, 60 * 2);
 	player->SetPosition(850, 500);
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
 	srand(time(NULL));
@@ -83,8 +83,10 @@ void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
 	randomX = (rand() % 800) + 600;
 	randomMonster = (rand() % 3) + 1;
 
-	printf("randomX = %d\n", randomX);
-	printf("randomMonster = %d\n", randomMonster);
+	/*printf("randomX = %d\n", randomX);
+	printf("randomMonster = %d\n", randomMonster);*/
+
+	randomMonster = 2;
 
 	//아누비스 
 	if(randomMonster == 1)

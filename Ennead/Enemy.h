@@ -17,6 +17,7 @@ class Enemy : public GameObject
 {
 protected:
 	Sprite* m_Sprite;
+	Animation * m_Anim;
 
 	int m_Health;
 	int m_Speed;
@@ -28,7 +29,8 @@ public:
 	~Enemy();
 
 	void Release();
-	bool Init(Vector2 pos,std::wstring fileName, EnemyName name);
+	bool Init(Vector2 pos,Animation* anim, EnemyName name);
+
 	void Update(float deltaTime);
 	void Render();
 

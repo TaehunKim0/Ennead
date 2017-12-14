@@ -29,7 +29,7 @@ E_Anubis * E_Anubis::Create(Vector2 pos)
 
 bool E_Anubis::Init(Vector2 pos)
 {
-	Enemy::Init(pos, L"Resources/Enemy/E_Anubis.png", EnemyName::Anubis);
+	//Enemy::Init(pos, L"Resources/Enemy/E_Anubis.png", EnemyName::Anubis);
 
 	return true;
 }

@@ -28,7 +28,17 @@ E_Eagle * E_Eagle::Create(Vector2 pos)
 
 bool E_Eagle::Init(Vector2 pos)
 {
-	Enemy::Init(pos, L"Resources/Enemy/E_Eagle.png", EnemyName::Eagle);
+	Flying = Animation::Create(30);
+
+	Flying->AddFrame(L"Resources/Anim/anim1.png");	
+	Flying->AddFrame(L"Resources/Anim/anim2.png");
+	Flying->AddFrame(L"Resources/Anim/anim3.png");
+	Flying->SetScale(Vector2{ 0.5f , 0.5f });
+
+	Enemy::Init(pos, Flying, EnemyName::Eagle);
+	
+
+	AddChild(Flying);
 
 	return true;
 
@@ -42,6 +52,7 @@ void E_Eagle::Release()
 void E_Eagle::Update(float deltaTime)
 {
 	Enemy::Update(deltaTime);
+	
 
 	//for (int i = 1; i < 100;)
 	//	radius = -190.f * -i;

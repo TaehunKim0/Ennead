@@ -19,12 +19,11 @@ void Enemy::Release()
 	GameObject::Release();
 }
 
-bool Enemy::Init(Vector2 pos, std::wstring fileName, EnemyName name)
+bool Enemy::Init(Vector2 pos, Animation *anim, EnemyName name)
 {
 	m_Position = pos;
-	m_Sprite = Sprite::Create(fileName.c_str());
 
-	m_Size = m_Sprite->GetSize();
+	m_Size = anim->GetSize();
 
 	m_Collision = BoxCollider::Create(m_Position, m_Size);
 
@@ -32,10 +31,10 @@ bool Enemy::Init(Vector2 pos, std::wstring fileName, EnemyName name)
 	m_EName = name;
 
 	AddChild(m_Collision);
-	AddChild(m_Sprite);
 
 	return true;
 }
+
 
 
 
