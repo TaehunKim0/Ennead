@@ -46,7 +46,7 @@ bool Stage1::Init()
 void Stage1::Update(float deltaTime)
 {
 	SpawnTime++;
-	if (SpawnTime == 40)
+	if (SpawnTime == 60)
 	{
 		SpawnEnemys();
 		SpawnTime = 0;

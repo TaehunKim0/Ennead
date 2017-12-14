@@ -220,7 +220,7 @@ void Player::Move()
 		pState = PlayerState::Idle;
 
 	latingTime++;
-	if (latingTime >= 40)
+	if (latingTime >= 25)
 		CanAttack = 1;
 
 }
@@ -234,8 +234,8 @@ void Player::Attack()
 			CanAttack = 0;
 
 			BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(15.f, -10.f), L"Resources/sword.png", Tag::Player, 5.f);
-
-			//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 17.f , 5.f);
+			 
+  			//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 17.f , 5.f);
 
 			//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, -20.f);
 		}
