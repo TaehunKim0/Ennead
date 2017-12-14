@@ -1,6 +1,10 @@
 #include "PrevHeader.h"
 #include "RBullet.h"
 
+/*
+회전하는 총알
+
+*/
 
 RBullet::RBullet()
 	: IsCollide(0)

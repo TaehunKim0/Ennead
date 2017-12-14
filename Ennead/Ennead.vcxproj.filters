@@ -45,6 +45,12 @@
       <Filter>Bullet</Filter>
     </ClCompile>
     <ClCompile Include="EffectFactory.cpp" />
+    <ClCompile Include="UI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMgr.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -76,6 +82,9 @@
     </Filter>
     <Filter Include="Enemy\Stage3">
       <UniqueIdentifier>{1c2a8fec-bbdb-4b1d-8ff5-68ffe2f9c663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{64188ba4-426e-45bd-aa08-8e07b428d046}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -122,5 +131,11 @@
       <Filter>Bullet</Filter>
     </ClInclude>
     <ClInclude Include="EffectFactory.h" />
+    <ClInclude Include="UI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMgr.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

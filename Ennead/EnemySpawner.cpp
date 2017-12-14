@@ -47,4 +47,7 @@ void EnemySpawner::SpawnEnemy(Vector2 pos, EnemyName name, int waitTime)
 void EnemySpawner::RandomSpawnEnemy(int y)
 {
 	//SpawnEnemy
+
+	//랜덤 y 값으로 소환
+
 }
