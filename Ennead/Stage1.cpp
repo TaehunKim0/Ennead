@@ -86,8 +86,6 @@ void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
 	/*printf("randomX = %d\n", randomX);
 	printf("randomMonster = %d\n", randomMonster);*/
 
-	randomMonster = 2;
-
 	//아누비스 
 	if(randomMonster == 1)
 		EnemySpawner::GetInstance()->SpawnEnemy(Vector2(randomX, -100), EnemyName::Anubis, 60 * 2);

@@ -2,7 +2,7 @@
 class E_Mummy : public Enemy
 {
 private:
-	Sprite* mummy;
+	Animation * mummy;
 	
 public:
 	//BoxCollider* m_Collision;

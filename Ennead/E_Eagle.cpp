@@ -1,7 +1,6 @@
 #include "PrevHeader.h"
 #include "E_Eagle.h"
 
-
 E_Eagle::E_Eagle()
 {
 	radius = 10.f;
@@ -30,13 +29,9 @@ bool E_Eagle::Init(Vector2 pos)
 {
 	Flying = Animation::Create(30);
 
-	Flying->AddFrame(L"Resources/Anim/anim1.png");	
-	Flying->AddFrame(L"Resources/Anim/anim2.png");
-	Flying->AddFrame(L"Resources/Anim/anim3.png");
-	Flying->SetScale(Vector2{ 0.5f , 0.5f });
+	Flying->AddFrame(L"Resources/Enemy/E_Eagle.png");	
 
 	Enemy::Init(pos, Flying, EnemyName::Eagle);
-	
 
 	AddChild(Flying);
 

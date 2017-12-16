@@ -21,8 +21,8 @@ private:
 	}
 	
 private:
-	Sprite* anubis;
-
+	Animation* anubis;
+	
 	int Frame;
 	float radius;
 

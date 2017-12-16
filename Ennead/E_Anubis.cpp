@@ -29,7 +29,11 @@ E_Anubis * E_Anubis::Create(Vector2 pos)
 
 bool E_Anubis::Init(Vector2 pos)
 {
-	//Enemy::Init(pos, L"Resources/Enemy/E_Anubis.png", EnemyName::Anubis);
+	anubis = Animation::Create(10);
+	anubis->AddFrame(L"Resources/Enemy/E_Anubis.png");
+
+	Enemy::Init(pos, anubis, EnemyName::Anubis);
+	AddChild(anubis);
 
 	return true;
 }

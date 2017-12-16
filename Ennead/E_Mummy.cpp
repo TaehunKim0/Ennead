@@ -31,8 +31,12 @@ void E_Mummy::Release()
 
 bool E_Mummy::Init(Vector2 pos)
 {
-	//Enemy::Init(pos, L"Resources/Enemy/E_Mummy.png",EnemyName::Mummy);
+	mummy = Animation::Create(10);
+	mummy->AddFrame(L"Resources/Enemy/E_Mummy.png");
 
+	Enemy::Init(pos, mummy, EnemyName::Mummy);
+
+	AddChild(mummy);
 	return true;
 }
 
