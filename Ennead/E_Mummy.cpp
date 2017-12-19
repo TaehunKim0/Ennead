@@ -36,6 +36,8 @@ bool E_Mummy::Init(Vector2 pos)
 
 	Enemy::Init(pos, mummy, EnemyName::Mummy);
 
+	printf("Mummy : %f %f\n", m_Size.x, m_Size.y);
+
 	AddChild(mummy);
 	return true;
 }

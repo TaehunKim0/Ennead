@@ -79,8 +79,6 @@ void E_Eagle::Move()
 {
 	c += 0.02f;
 
-	
-
 	SetPosition(cos(c) * 5, 1);
 	
 }

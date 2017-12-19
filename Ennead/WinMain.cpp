@@ -1,5 +1,6 @@
 #include"PrevHeader.h"
 #include"Stage1.h"
+#include"MenuScene.h"
 
 INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
@@ -11,8 +12,8 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 #endif
 	Application* app = Application::GetInstance();
 
-	app->Init(L"Ennead", 2000, 720, false);
-	Director::GetInstance()->SetScene(Stage1::Create());
+	app->Init(L"Ennead", 2000, 1080, false);
+	Director::GetInstance()->SetScene(MenuScene::Create());
 	
 	app->GameLoop();
 

@@ -2,7 +2,7 @@
 class CollisionEffect : public Effect
 {
 private:
-
+	
 
 public:
 	CollisionEffect();
@@ -14,4 +14,3 @@ public:
 	void Update(float deltaTime);
 	void Render();
 };
-

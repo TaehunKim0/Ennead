@@ -90,7 +90,7 @@ void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
 	/*printf("randomX = %d\n", randomX);
 	printf("randomMonster = %d\n", randomMonster);*/
 
-	
+	//randomMonster = 3;
 
 	//아누비스 
 	if(randomMonster == 1)
