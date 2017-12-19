@@ -38,6 +38,8 @@ bool Stage1::Init()
 	AddChild(BulletMgr::GetInstance());
 	AddChild(EnemySpawner::GetInstance());
 
+	AddChild(EffectFactory::GetInstance());
+
 	return true;
 }
 
@@ -45,9 +47,11 @@ bool Stage1::Init()
 
 void Stage1::Update(float deltaTime)
 {
+
 	SpawnTime++;
 	if (SpawnTime == 60)
 	{
+		//EffectFactory::GetInstance()->CreateCollisionEffect(500.f, 500.f);
 		SpawnEnemys();
 		SpawnTime = 0;
 	}
@@ -85,6 +89,8 @@ void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
 
 	/*printf("randomX = %d\n", randomX);
 	printf("randomMonster = %d\n", randomMonster);*/
+
+	
 
 	//아누비스 
 	if(randomMonster == 1)

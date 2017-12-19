@@ -9,3 +9,5 @@
 #include"Enemy.h"
 #include"EnemySpawner.h"
 #include"UI.h"
+#include"Effect.h"
+#include"EffectFactory.h"

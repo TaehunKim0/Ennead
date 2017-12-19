@@ -162,6 +162,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletMgr.cpp" />
     <ClCompile Include="CharacterSelectScene.cpp" />
+    <ClCompile Include="CollisionEffect.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="EffectFactory.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletMgr.h" />
     <ClInclude Include="CharacterSelectScene.h" />
+    <ClInclude Include="CollisionEffect.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="EffectFactory.h" />
     <ClInclude Include="Enemy.h" />

@@ -65,6 +65,8 @@ void E_Mummy::OnCollision(GameObject * other)
 {
 	printf("Mummy collision\n");
 
+	EffectFactory::GetInstance()->CreateCollisionEffect(m_Position.x, m_Position.y);
+
 	m_Health -= 1;
 
 }

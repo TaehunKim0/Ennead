@@ -75,6 +75,7 @@ void E_Anubis::OnCollision(GameObject * other)
 {
 	if (other->GetTag() == Tag::Player)
 	{
+		EffectFactory::GetInstance()->CreateCollisionEffect(m_Position.x, m_Position.y);
 		m_Health -= 1;
 	}
 }

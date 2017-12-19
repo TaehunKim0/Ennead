@@ -1,15 +1,20 @@
 #pragma once
-class EffectFactory: public Singleton<EffectFactory>
+class EffectFactory: public Singleton<EffectFactory> , public GameObject
 {
 private:
-	
+	std::vector<Effect*> m_Effects;
 
 public:
 	EffectFactory();
 	~EffectFactory();
 
-	void CreateDeadEffect();
-	void CreateColliderEffect();
+	void CreateDeadEffect(float x , float y);
+	void CreateCollisionEffect(float x , float y);
+
+	void Destory(Effect* child);
+
+	void Update(float deltaTime);
+	void Render();
 
 };
 
