@@ -3,11 +3,11 @@ class BulletMgr : public Singleton<BulletMgr> , public GameObject
 {
 private:
 
-
 public:
 	BulletMgr();
 	~BulletMgr();
 
+	
 	void Update(float deltaTime);
 	void Render();
 	void Release();

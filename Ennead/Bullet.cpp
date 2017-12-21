@@ -62,7 +62,7 @@ void Bullet::Update(float deltaTime)
 
 	if (m_Tag == Tag::Enemy)
 	{
-		SetPosition(0.f, 5.f);
+		SetPosition(0.f, m_Speed);
 	}
 }
 

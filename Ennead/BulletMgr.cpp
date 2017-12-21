@@ -23,6 +23,7 @@ void BulletMgr::Render()
 
 void BulletMgr::Release()
 {
+	GameObject::Release();
 }
 
 void BulletMgr::CreateRBullet(Vector2 pos, std::wstring img, Tag tag, float radius,float speed)

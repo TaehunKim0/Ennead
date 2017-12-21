@@ -12,10 +12,13 @@ MenuScene::~MenuScene()
 
 void MenuScene::Release()
 {
+	GameObject::Release();
 }
 
 bool MenuScene::Init()
 {
+	this->m_Position.x -= 13;
+	this->m_Position.y -= 5;
 	m_Background = Sprite::Create(L"Resources/Menu/Background.png");
 	m_GameStart = Sprite::Create(L"Resources/Menu/GameStart.png");
 	m_Setting = Sprite::Create(L"Resources/Menu/Setting.png");
@@ -40,14 +43,6 @@ void MenuScene::Update(float deltaTime)
 {
 	Scene::Update(deltaTime);
 
-	if (CollisionMgr::GetInstance()->IsPointInBox(m_GameStart->GetSize(), m_GameStart->GetPosition()))
-	{
-		if (Input::GetInstance()->GetKeyState(VK_LBUTTON) == KeyState::Down)
-		{
-			Director::GetInstance()->SetScene(Stage1::Create());
-		}
-	}
-
 	if (CollisionMgr::GetInstance()->IsPointInBox(m_Exit->GetSize(), m_Exit->GetPosition()))
 	{
 		if (Input::GetInstance()->GetKeyState(VK_LBUTTON) == KeyState::Down)
@@ -55,6 +50,19 @@ void MenuScene::Update(float deltaTime)
 			exit(0);
 		}
 	}
+
+	if (CollisionMgr::GetInstance()->IsPointInBox(m_GameStart->GetSize(), m_GameStart->GetPosition()))
+	{
+
+		if (Input::GetInstance()->GetKeyState(VK_LBUTTON) == KeyState::Down)
+		{
+
+			Director::GetInstance()->SetScene(Stage1::Create());
+		}
+	}
+
+
+
 
 }
 

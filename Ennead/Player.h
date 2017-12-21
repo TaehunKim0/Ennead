@@ -28,6 +28,19 @@ private:
 	static Player* m_Instance;
 
 public:
+
+	float GetAngle(Vector2 p1, Vector2 p2)
+	{
+		float xdf = p2.x - p1.x;
+		float ydf = p2.y - p1.y;
+
+		float ang = D3DXToRadian((atan2(ydf, xdf)));
+
+		//printf("angle = %f\n", ang2);
+
+		return ang;
+	}
+
 	static Player* GetInstance();
 	static void ReleaseInstance();
 

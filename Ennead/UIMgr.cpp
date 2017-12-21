@@ -4,8 +4,9 @@
 
 UIMgr::UIMgr()
 {
+	Hp = Sprite::Create(L"Resources/UI/Hp.png");
+	AddChild(Hp);
 }
-
 
 UIMgr::~UIMgr()
 {

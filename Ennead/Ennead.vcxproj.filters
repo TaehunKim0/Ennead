@@ -56,6 +56,19 @@
     <ClCompile Include="EffectFactory.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
+    <ClCompile Include="Stage2.cpp" />
+    <ClCompile Include="E_Thoth.cpp">
+      <Filter>Enemy\Stage2</Filter>
+    </ClCompile>
+    <ClCompile Include="E_Cobra.cpp">
+      <Filter>Enemy\Stage2</Filter>
+    </ClCompile>
+    <ClCompile Include="E_Cat.cpp">
+      <Filter>Enemy\Stage2</Filter>
+    </ClCompile>
+    <ClCompile Include="E_Spinks.cpp">
+      <Filter>Enemy\Stage3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -76,9 +89,6 @@
     <Filter Include="Enemy">
       <UniqueIdentifier>{93293b71-03eb-4ea2-8816-4e7a3306c528}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Enemy\Stage1">
-      <UniqueIdentifier>{4fa63ac4-f194-4a0b-bb1d-0fa098cd724d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Bullet">
       <UniqueIdentifier>{060ae527-ae61-4f55-8958-d0023084a268}</UniqueIdentifier>
     </Filter>
@@ -90,6 +100,9 @@
     </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{64188ba4-426e-45bd-aa08-8e07b428d046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy\Stage1">
+      <UniqueIdentifier>{4fa63ac4-f194-4a0b-bb1d-0fa098cd724d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +159,19 @@
     </ClInclude>
     <ClInclude Include="EffectFactory.h">
       <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h" />
+    <ClInclude Include="E_Thoth.h">
+      <Filter>Enemy\Stage2</Filter>
+    </ClInclude>
+    <ClInclude Include="E_Cobra.h">
+      <Filter>Enemy\Stage2</Filter>
+    </ClInclude>
+    <ClInclude Include="E_Cat.h">
+      <Filter>Enemy\Stage2</Filter>
+    </ClInclude>
+    <ClInclude Include="E_Spinks.h">
+      <Filter>Enemy\Stage3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

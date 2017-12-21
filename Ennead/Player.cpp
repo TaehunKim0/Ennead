@@ -72,7 +72,9 @@ void Player::ReleaseInstance()
 bool Player::Init()
 {
 	pplayer = Sprite::Create(L"Resources/Player.png");
-	pplayer->SetScale(Vector2(0.25f, 0.25f));
+	//pplayer->SetScale(Vector2{ 0.5f,0.5f });
+
+	pplayer->SetScale(Vector2(2.f, 2.f));
 
 	m_Tag = Tag::Player;
 
@@ -179,7 +181,7 @@ void Player::Move()
 {
 	checkInput = false;
 
-	if (Input::GetInstance()->GetKeyState(VK_LEFT) == KeyState::Pressed)
+	if (Input::GetInstance()->GetKeyState('A') == KeyState::Pressed)
 	{
 		this->SetPosition(-m_Speed, 0.f);
 		pDirection = PlayerDirection::Left;
@@ -188,7 +190,7 @@ void Player::Move()
 		checkInput = true;
 	}
 
-	if (Input::GetInstance()->GetKeyState(VK_RIGHT) == KeyState::Pressed)
+	if (Input::GetInstance()->GetKeyState('D') == KeyState::Pressed)
 	{
 		this->SetPosition(m_Speed, 0.f);
 		pDirection = PlayerDirection::Right;
@@ -197,7 +199,7 @@ void Player::Move()
 		checkInput = true;
 	}
 
-	if (Input::GetInstance()->GetKeyState(VK_UP) == KeyState::Pressed)
+	if (Input::GetInstance()->GetKeyState('W') == KeyState::Pressed)
 	{
 		this->SetPosition(0.f, -m_Speed);
 		pDirection = PlayerDirection::Up;
@@ -206,7 +208,7 @@ void Player::Move()
 		checkInput = true;
 	}
 
-	if (Input::GetInstance()->GetKeyState(VK_DOWN) == KeyState::Pressed)
+	if (Input::GetInstance()->GetKeyState('S') == KeyState::Pressed)
 	{
 		this->SetPosition(0.f, m_Speed);
 		pDirection = PlayerDirection::Down;
@@ -228,12 +230,18 @@ void Player::Move()
 void Player::Attack()
 {
 	if(CanAttack)
-		if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::Up)
+		if (Input::GetInstance()->GetKeyState(VK_LBUTTON) == KeyState::Up)
 		{
 			latingTime = 0;
 			CanAttack = 0;
 
-			BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(15.f, -10.f), L"Resources/sword.png", Tag::Player, 5.f);
+			auto angle = GetAngle(m_Position, Input::GetInstance()->GetMousePosition());
+
+			printf("player angle = %f\n", angle);
+
+			BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(10.f, -10.f), L"Resources/Bullet.png", Tag::Player, angle , 10.f);
+
+			//BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(15.f, -10.f), L"Resources/sword.png", Tag::Player, 5.f);
 			 
   			//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(23.f, -10.f), L"Resources/Bullet.png", Tag::Player, 17.f , 5.f);
 

@@ -17,6 +17,9 @@ private:
 		float ydf = p2.y - p1.y;
 
 		float ang = D3DXToRadian((atan2(ydf, xdf)));
+
+		//printf("angle = %f\n", ang2);
+
 		return ang;
 	}
 	

@@ -42,7 +42,7 @@ void CollisionEffect::Update(float deltaTime)
 
 	if (m_Effect->GetIsAnd())
 	{
-		EffectFactory::GetInstance()->Destory(this);
+		Destroy();
 	}
 }
 

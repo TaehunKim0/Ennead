@@ -138,7 +138,28 @@ void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
 {
 	float angle = GetAngle(m_Position , targetPosition);
 
-	BulletMgr::GetInstance()->CreateRBullet(m_Position, L"Resources/Bullet.png", Tag::Enemy, angle, throwSpeed);
+	//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, angle, throwSpeed);
+
+	BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f } , L"Resources/Bullet.png", Tag::Enemy, -60.f, throwSpeed);
+	
+	BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, -45.f, throwSpeed);
+	
+	BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, throwSpeed);
 
 	m_State = EnemyState::Move;
+	
+	auto direction = (rand() % 2) + 1;
+
+	printf("direction : %d\n", direction);
+
+	if (direction == 1)
+	{
+		m_Direction = AnubisDirection::Right;
+	}
+
+	else if(direction == 2)
+	{
+		m_Direction = AnubisDirection::Left;
+	}
+
 }

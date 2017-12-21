@@ -11,7 +11,7 @@ public:
 	void CreateDeadEffect(float x , float y);
 	void CreateCollisionEffect(float x , float y);
 
-	void Destory(Effect* child);
+	
 
 	void Update(float deltaTime);
 	void Render();

@@ -3,6 +3,7 @@
 
 
 UI::UI()
+	:draw(0)
 {
 }
 
@@ -13,6 +14,9 @@ UI::~UI()
 
 bool UI::Init()
 {
+	//Font
+	
+
 
 	return true;
 }
@@ -25,6 +29,39 @@ void UI::Update(float deltaTime)
 void UI::Render()
 {
 	GameObject::Render();
+
+	if (draw)
+	{
+		RECT rect;
+		SetRectEmpty(&rect);
+
+		m_Font->DrawTextW(NULL, m_Text.c_str(), m_Text.size(), &rect, DT_CALCRECT, D3DCOLOR_XRGB(0, 0, 0));
+	}
+	
+
+}
+
+void UI::_CreateFont(int width, int height, std::wstring& fontface)
+{
+	HRESULT hr = D3DXCreateFont(
+		Renderer::GetInstance()->m_Device
+		, height
+		, width
+		, FW_NORMAL
+		, D3DX_DEFAULT
+		, false
+		, DEFAULT_CHARSET
+		, OUT_TT_ONLY_PRECIS
+		, ANTIALIASED_QUALITY
+		, NULL
+		, fontface.c_str()
+		, &m_Font);
+
+	if FAILED(hr)
+		return;
+
+	m_FontFace = fontface;
+
 }
 
 bool UI::OnClick()
@@ -35,12 +72,7 @@ bool UI::OnClick()
 
 bool UI::IsCollisionWithPoint()
 {
-	if (Input::GetInstance()->GetMouseState(VK_LBUTTON) == KeyState::Up)
-	{
-		//내 Vector 와 마우스 포인트가 충돌 되었는지 비교
-		return true;
-	}
-
+	//UI와 mouse Collision
 	return false;
 }
 
