@@ -6,6 +6,9 @@ private:
 	int m_Speed;
 	bool IsCollide;
 
+
+	int m_LifeTime;
+
 	float m_Radius;
 
 public:

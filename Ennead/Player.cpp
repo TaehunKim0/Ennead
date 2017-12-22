@@ -237,9 +237,9 @@ void Player::Attack()
 
 			auto angle = GetAngle(m_Position, Input::GetInstance()->GetMousePosition());
 
-			printf("player angle = %f\n", angle);
+		//	printf("player angle = %f\n", angle);
 
-			BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(10.f, -10.f), L"Resources/Bullet.png", Tag::Player, angle , 10.f);
+			BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(10.f, -10.f), L"Resources/Bullet.png", Tag::Player, -angle , 10.f);
 
 			//BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2(15.f, -10.f), L"Resources/sword.png", Tag::Player, 5.f);
 			 

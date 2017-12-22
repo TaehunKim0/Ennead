@@ -1,12 +1,13 @@
 #pragma once
 
-
 class Bullet : public GameObject
 {
 private:
 	Sprite* m_bullet;
 	int m_Speed;
 	bool IsCollide;
+
+	int m_LifeTime;
 
 public:
 	Bullet();

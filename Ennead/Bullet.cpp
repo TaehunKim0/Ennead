@@ -1,13 +1,12 @@
 #include "PrevHeader.h"
 #include "Bullet.h"
 
-
 Bullet::Bullet()
 	: m_Speed(5.f)
 {	
 	IsCollide = 0;
+	m_LifeTime = 360;
 }
-
 
 Bullet::~Bullet()
 {
@@ -49,8 +48,11 @@ void Bullet::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (IsCollide)
+	m_LifeTime--;
+
+	if (IsCollide || m_LifeTime <= 0)
 	{
+		printf("Bullet Delete\n");
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}

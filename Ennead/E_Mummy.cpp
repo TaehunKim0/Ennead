@@ -36,7 +36,7 @@ bool E_Mummy::Init(Vector2 pos)
 
 	Enemy::Init(pos, mummy, EnemyName::Mummy);
 
-	printf("Mummy : %f %f\n", m_Size.x, m_Size.y);
+	//printf("Mummy : %f %f\n", m_Size.x, m_Size.y);
 
 	AddChild(mummy);
 	return true;
@@ -65,7 +65,7 @@ void E_Mummy::Render()
 
 void E_Mummy::OnCollision(GameObject * other)
 {
-	printf("Mummy collision\n");
+	//printf("Mummy collision\n");
 
 	EffectFactory::GetInstance()->CreateCollisionEffect(m_Position.x, m_Position.y);
 

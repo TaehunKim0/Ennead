@@ -9,6 +9,7 @@
 RBullet::RBullet()
 	: IsCollide(0)
 	, m_Speed(5.f)
+	,m_LifeTime(360)
 {
 }
 
@@ -54,8 +55,11 @@ void RBullet::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (IsCollide)
+	m_LifeTime--;
+
+	if (IsCollide || m_LifeTime <= 0)
 	{
+		printf("RBullet Delete\n");
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}
@@ -73,7 +77,7 @@ void RBullet::Update(float deltaTime)
 	{
 		auto Radius = (m_Radius * 180) / Math_PI;
 
-		printf("m_Speed : %f\n", m_Speed);
+		
 
 		SetPosition(cos(Radius)* m_Speed, -sin(Radius)*m_Speed);
 	}

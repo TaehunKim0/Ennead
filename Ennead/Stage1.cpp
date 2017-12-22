@@ -20,7 +20,7 @@ bool Stage1::Init()
 	Scene::Init();
 	player = Player::GetInstance();
 	player->Init();
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Anubis, 60 * 2);
+	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Anubis, 60 * 2);
 
 	player->SetPosition(850, 500);
 	Map1 = Sprite::Create(L"Resources/Stage3.png");
@@ -50,7 +50,7 @@ void Stage1::Update(float deltaTime)
 	{
 		//EffectFactory::GetInstance()->CreateCollisionEffect(500.f, 500.f);
 		//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1000, -100), EnemyName::Anubis, 60 * 2);
-		//SpawnEnemys();
+		SpawnEnemys();
 		SpawnTime = 0;
 	}
 

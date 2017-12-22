@@ -150,7 +150,7 @@ void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
 	
 	auto direction = (rand() % 2) + 1;
 
-	printf("direction : %d\n", direction);
+	//printf("direction : %d\n", direction);
 
 	if (direction == 1)
 	{
