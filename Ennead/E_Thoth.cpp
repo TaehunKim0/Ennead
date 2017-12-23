@@ -4,6 +4,7 @@
 
 E_Thoth::E_Thoth()
 	:Frame(0)
+	,AFrame(0)
 {
 	m_State = EnemyState::Move;
 }
@@ -77,11 +78,48 @@ void E_Thoth::Render()
 
 void E_Thoth::Move()
 {
-
+	SetPosition(0.f, 1.f);
+	
 }
 
 void E_Thoth::Attack()
 {
+	AFrame++;
+	if (AFrame <= 270)
+	{
+		switch (m_Direction)
+		{
+
+		case EnemyDirection::Left:
+		{
+			SetPosition(-1.f, 0.f);
+			break;
+		}
+
+
+		case EnemyDirection::Right:
+		{
+			SetPosition(1.f, 0.f);
+			break;
+		}
+		}
+	}
+	else
+	{
+		BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, -60.f, 5.f);
+
+		BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, -45.f, 5.f);
+
+		BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, 5.f);
+		
+		m_State = EnemyState::Move;
+
+		AFrame = 0;
+
+	}
+	
+	}
+
 	/*BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, -60.f, throwSpeed);
 
 	BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, -45.f, throwSpeed);

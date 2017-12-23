@@ -1,18 +1,13 @@
 #pragma once
 
-enum class ThothDirection
-{
-	Left = 0,
-	Right
-};
+
 
 class E_Thoth : public Enemy
 {
 public:
-	ThothDirection m_Direction;
-
+	
 	int Frame;
-
+	int AFrame;
 
 public:
 	E_Thoth();
