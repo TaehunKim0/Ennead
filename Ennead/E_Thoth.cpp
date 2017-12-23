@@ -7,6 +7,7 @@ E_Thoth::E_Thoth()
 	,AFrame(0)
 {
 	m_State = EnemyState::Move;
+	m_Direction = EnemyDirection::Left;
 }
 
 
@@ -28,9 +29,12 @@ E_Thoth * E_Thoth::Create(Vector2 pos)
 
 bool E_Thoth::Init(Vector2 pos)
 {
+	m_Anim = Animation::Create(1);
+	m_Anim->AddFrame(L"Resources/Enemy/E_Thoth.png");
 
+	Enemy::Init(pos, m_Anim, EnemyName::Thoth);
 
-	m_Position = pos;
+	AddChild(m_Anim);
 
 	return true;
 }
@@ -45,7 +49,7 @@ void E_Thoth::Update(float deltaTime)
 		Destroy();
 	}
 
-	if (Frame >= 360)
+	if (Frame >= 120)
 	{
 		m_State = EnemyState::Attack;
 		Frame = 0;
@@ -79,13 +83,12 @@ void E_Thoth::Render()
 void E_Thoth::Move()
 {
 	SetPosition(0.f, 1.f);
-	
 }
 
 void E_Thoth::Attack()
 {
 	AFrame++;
-	if (AFrame <= 270)
+	if (AFrame <= 60)
 	{
 		switch (m_Direction)
 		{
@@ -115,6 +118,19 @@ void E_Thoth::Attack()
 		m_State = EnemyState::Move;
 
 		AFrame = 0;
+
+		auto random = (rand() % 1) + 1;
+		switch (random)
+		{
+		case 0:
+			m_Direction = EnemyDirection::Left;
+			break;
+
+		case 1:
+			m_Direction = EnemyDirection::Right;
+			break;
+		}
+
 
 	}
 	

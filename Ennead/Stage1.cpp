@@ -30,7 +30,7 @@ bool Stage1::Init()
 	 
 	//시간 조절해서 생성하자
 
-	AddChild(Map1);
+	//AddChild(Map1);
 	AddChild(player);
 
 	AddChild(BulletMgr::GetInstance());
