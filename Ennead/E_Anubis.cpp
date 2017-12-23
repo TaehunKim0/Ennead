@@ -8,7 +8,7 @@ E_Anubis::E_Anubis()
 {
 	m_Speed = 1.f;
 	m_State = EnemyState::Move;
-	m_Direction = AnubisDirection::Left;
+	m_Direction = EnemyDirection::Left;
 }
 
 E_Anubis::~E_Anubis()
@@ -112,13 +112,13 @@ void E_Anubis::Attack()
 	{
 		switch (m_Direction)
 		{
-		case AnubisDirection::Left:
+		case EnemyDirection::Left:
 			if (KeepTime < 60 * 2)
 				SetPosition(cos((120)*3.f), sin((120)*3.f));
 
 			break;
 
-		case AnubisDirection::Right:
+		case EnemyDirection::Right:
 			if (KeepTime < 60 * 2)
 				SetPosition(cos(radius*3.f), sin(radius*3.f));
 
@@ -153,12 +153,12 @@ void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
 
 	if (direction == 1)
 	{
-		m_Direction = AnubisDirection::Right;
+		m_Direction = EnemyDirection::Right;
 	}
 
 	else if(direction == 2)
 	{
-		m_Direction = AnubisDirection::Left;
+		m_Direction = EnemyDirection::Left;
 	}
 
 }

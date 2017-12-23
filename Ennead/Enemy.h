@@ -16,6 +16,13 @@ enum class EnemyName
 	Thoth
 };
 
+enum class EnemyDirection
+{
+	None,
+	Left = 1,
+	Right
+};
+
 class Enemy : public GameObject
 {
 protected:
@@ -27,6 +34,8 @@ protected:
 
 	EnemyName m_EName;
 	EnemyState m_State;
+	EnemyDirection m_Direction;
+
 public:
 	Enemy();
 	~Enemy();
