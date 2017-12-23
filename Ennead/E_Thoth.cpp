@@ -126,4 +126,3 @@ void E_Thoth::Attack()
 
 	BulletMgr::GetInstance()->CreateBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, throwSpeed);
 	*/
-}

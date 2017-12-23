@@ -3,6 +3,8 @@
 #include"E_Mummy.h"
 #include"E_Eagle.h"
 #include"E_Anubis.h"
+#include"E_Thoth.h"
+
 
 EnemySpawner::EnemySpawner()
 	: Frame(0)
@@ -43,6 +45,13 @@ void EnemySpawner::SpawnEnemy(Vector2 pos, EnemyName name, int waitTime)
 
 	if (name == EnemyName::Anubis)
 		AddChild(E_Anubis::Create(pos));
+
+	if (name == EnemyName::Thoth)
+		AddChild(E_Thoth::Create(pos));
+
+
+
+
 }
 
 void EnemySpawner::RandomSpawnEnemy(int y)
