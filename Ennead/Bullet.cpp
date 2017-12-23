@@ -5,7 +5,7 @@ Bullet::Bullet()
 	: m_Speed(5.f)
 {	
 	IsCollide = 0;
-	m_LifeTime = 360;
+	m_LifeTime = 120;
 }
 
 Bullet::~Bullet()

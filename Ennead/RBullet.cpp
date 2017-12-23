@@ -9,7 +9,7 @@
 RBullet::RBullet()
 	: IsCollide(0)
 	, m_Speed(5.f)
-	,m_LifeTime(360)
+	,m_LifeTime(120)
 {
 }
 

@@ -11,6 +11,9 @@ enum class EnemyName
 	Eagle = 1,
 	Mummy,
 	Anubis,
+	Cat,
+	Cobra,
+	Thoth
 };
 
 class Enemy : public GameObject

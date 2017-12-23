@@ -85,7 +85,13 @@ void Stage1::Update(float deltaTime)
 void Stage1::Render()
 {
 	GameObject::Render();
+
+	//printf("asdfasdkjashdkashdasjkhdasjkdh");
+
+
+
 	//BulletMgr::GetInstance()->Render();
+
 }
 
 void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳

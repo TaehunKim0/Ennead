@@ -46,6 +46,7 @@ void E_Anubis::Release()
 void E_Anubis::Update(float deltaTime)
 {
 	Enemy::Update(deltaTime);
+
 	MoveAttackCheck();
 
 	if (m_Health <= 0)
@@ -102,9 +103,7 @@ void E_Anubis::Move()
 
 void E_Anubis::Attack()
 {
-
 	//+90
-
 	radius = 20.f;
 	radius = D3DXToRadian(radius);
 	++KeepTime;

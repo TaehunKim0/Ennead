@@ -11,6 +11,8 @@ class E_Thoth : public Enemy
 public:
 	ThothDirection m_Direction;
 
+	int Frame;
+
 
 public:
 	E_Thoth();
@@ -23,6 +25,8 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
+public:
+	void Move();
 	void Attack();
 
 };
