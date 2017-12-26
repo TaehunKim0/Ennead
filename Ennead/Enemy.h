@@ -13,7 +13,8 @@ enum class EnemyName
 	Anubis,
 	Cat,
 	Cobra,
-	Thoth
+	Thoth,
+	Spinks
 };
 
 enum class EnemyDirection
