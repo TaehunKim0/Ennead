@@ -83,5 +83,11 @@ public:
 	void Move(); //이동
 	void Attack(); //총알 발사
 
+public:
+	int GetHp()
+	{
+		return m_Health;
+	}
+
 };
 

@@ -69,6 +69,7 @@
     <ClCompile Include="E_Spinks.cpp">
       <Filter>Enemy\Stage3</Filter>
     </ClCompile>
+    <ClCompile Include="Hp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -173,5 +174,6 @@
     <ClInclude Include="E_Spinks.h">
       <Filter>Enemy\Stage3</Filter>
     </ClInclude>
+    <ClInclude Include="Hp.h" />
   </ItemGroup>
 </Project>
