@@ -1,7 +1,7 @@
 #include"PrevHeader.h"
 #include"Stage1.h"
 #include"MenuScene.h"
-
+#include"TestMap.h"
 INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 #if _DEBUG
@@ -13,7 +13,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	Application* app = Application::GetInstance();
 
 	app->Init(L"Ennead", 2000, 1080, false);
-	Director::GetInstance()->SetScene(Stage1::Create());
+	Director::GetInstance()->SetScene(TestMap::Create());
 	
 	app->GameLoop();
 

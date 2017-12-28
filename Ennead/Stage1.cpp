@@ -20,32 +20,50 @@ bool Stage1::Init()
 	Scene::Init();
 	player = Player::GetInstance();
 	player->Init();
-	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Thoth, 60 * 2);
+	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Thoth, 60 * 2);
 
 	player->SetPosition(850, 500);
-	Map1 = Sprite::Create(L"Resources/Stage3.png");
+	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
+	Map1->SetPosition(0.f, -7000.f);
 	srand(time(NULL));
 
 	//L"Resources/Map/Stage1.png"
 	 
 	//시간 조절해서 생성하자
 
-	//AddChild(Map1);
+	AddChild(Map1);
 	AddChild(player);
+	
+	
+
+	block = Sprite::Create(L"Resources/block.png");
+	block->MatrixUsing(0);
+	//block->SetPosition(700.f, 653.f);
+
+	AddChild(block);
 
 	AddChild(BulletMgr::GetInstance());
 	AddChild(EnemySpawner::GetInstance());
 	AddChild(EffectFactory::GetInstance());
 
-
 	return true;
 }
-
-
 
 void Stage1::Update(float deltaTime)
 {
 	SpawnTime++;
+
+	float x = Input::GetInstance()->GetMousePosition().x;
+	float y = Input::GetInstance()->GetMousePosition().y;
+
+	block->PositionSet(x, y);
+	
+	printf("block Size x : %f\n", block->GetSize().x);
+
+	//printf("Mouse Pos : %f , %f \n", x, y);
+
+	//printf("block pos : %f , %f \n", block->GetPosition().x, block->GetPosition().y);
+
 	if (SpawnTime == 60)
 	{
 		//EffectFactory::GetInstance()->CreateCollisionEffect(500.f, 500.f);
@@ -79,6 +97,8 @@ void Stage1::Update(float deltaTime)
 
 	//	Director::GetInstance()->SetScene(Stage2::Create());
 	//}
+
+	//Map1->SetPosition(0.f, 0.5f);
 
 }
 

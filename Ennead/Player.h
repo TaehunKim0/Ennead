@@ -70,8 +70,6 @@ public:
 
 	void SetAnimWithClass(PlayerClass job);
 
-	
-
 	bool Init();
 	void Update(float deltaTime);
 	void Render();

@@ -4,7 +4,7 @@ class Stage1 : public Scene
 private:
 	Sprite* Map1;
 	Player* player;
-
+	Sprite* block;
 	int SpawnTime;
 
 public:

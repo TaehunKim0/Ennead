@@ -70,6 +70,7 @@
       <Filter>Enemy\Stage3</Filter>
     </ClCompile>
     <ClCompile Include="Hp.cpp" />
+    <ClCompile Include="TestMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -175,5 +176,6 @@
       <Filter>Enemy\Stage3</Filter>
     </ClInclude>
     <ClInclude Include="Hp.h" />
+    <ClInclude Include="TestMap.h" />
   </ItemGroup>
 </Project>
