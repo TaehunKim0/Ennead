@@ -7,19 +7,16 @@ enum class PlayerClass
 	Magician
 };
 
-enum class PlayerDirection
-{
-	Up = 1,
-	Down,
-	Left,
-	Right
-};
-
 enum class PlayerState
 {
 	Idle = 1,
 	Move,
 	Attack,
+};
+
+enum class PlayerLocation
+{
+	Stair =1
 };
 
 class Player : public GameObject
@@ -28,7 +25,10 @@ private:
 	static Player* m_Instance;
 
 public:
+	Vector2 OtherPos;
+	Vector2 OtherSize;
 
+	bool a;
 	float GetAngle(Vector2 p1, Vector2 p2)
 	{
 		float xdf = p2.x - p1.x;
@@ -48,6 +48,8 @@ private:
 	int m_Health;
 	int m_Speed;
 	bool checkInput;
+	bool canMoveRight;
+	bool canMoveLeft;
 
 	Sprite* pplayer;
 
@@ -65,8 +67,9 @@ public:
 	~Player();
 
 	PlayerClass Job;
-	PlayerDirection pDirection;
-	PlayerState pState;
+	Direction m_Direction;
+	PlayerState m_State;
+	PlayerLocation m_Location;
 
 	void SetAnimWithClass(PlayerClass job);
 

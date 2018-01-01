@@ -1,6 +1,9 @@
 #include"PrevHeader.h"
 #include "Stage1.h"
 #include "Stage2.h"
+
+#include"Stair.h"
+
 Stage1::Stage1()
 {
 	SpawnTime = 0;
@@ -22,25 +25,29 @@ bool Stage1::Init()
 	player->Init();
 	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Thoth, 60 * 2);
 
-	player->SetPosition(850, 500);
+	player->SetPosition(850, 700);
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
 	Map1->SetPosition(0.f, -7000.f);
 	srand(time(NULL));
 
-	//L"Resources/Map/Stage1.png"
-	 
-	//시간 조절해서 생성하자
-
+	stair = Stair::Create(Vector2{ 702.f, -900.f });
+	
+	
 	AddChild(Map1);
 	AddChild(player);
-	
+	AddChild(stair);
+
+
+
+	//block = Sprite::Create(L"Resources/block.png");
+	//block->MatrixUsing(1);
+
+	//AddChild(block);
+	//block->SetPosition(702.f, -900.f);
+
 	
 
-	block = Sprite::Create(L"Resources/block.png");
-	block->MatrixUsing(0);
 	//block->SetPosition(700.f, 653.f);
-
-	AddChild(block);
 
 	AddChild(BulletMgr::GetInstance());
 	AddChild(EnemySpawner::GetInstance());
@@ -56,13 +63,6 @@ void Stage1::Update(float deltaTime)
 	float x = Input::GetInstance()->GetMousePosition().x;
 	float y = Input::GetInstance()->GetMousePosition().y;
 
-	block->PositionSet(x, y);
-	
-	printf("block Size x : %f\n", block->GetSize().x);
-
-	//printf("Mouse Pos : %f , %f \n", x, y);
-
-	//printf("block pos : %f , %f \n", block->GetPosition().x, block->GetPosition().y);
 
 	if (SpawnTime == 60)
 	{

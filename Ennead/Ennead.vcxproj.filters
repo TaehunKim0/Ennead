@@ -56,7 +56,6 @@
     <ClCompile Include="EffectFactory.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
-    <ClCompile Include="Stage2.cpp" />
     <ClCompile Include="E_Thoth.cpp">
       <Filter>Enemy\Stage2</Filter>
     </ClCompile>
@@ -70,7 +69,13 @@
       <Filter>Enemy\Stage3</Filter>
     </ClCompile>
     <ClCompile Include="Hp.cpp" />
-    <ClCompile Include="TestMap.cpp" />
+    <ClCompile Include="Stair.cpp" />
+    <ClCompile Include="Stage2.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TestMap.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scene">
@@ -162,7 +167,6 @@
     <ClInclude Include="EffectFactory.h">
       <Filter>Effect</Filter>
     </ClInclude>
-    <ClInclude Include="Stage2.h" />
     <ClInclude Include="E_Thoth.h">
       <Filter>Enemy\Stage2</Filter>
     </ClInclude>
@@ -176,6 +180,12 @@
       <Filter>Enemy\Stage3</Filter>
     </ClInclude>
     <ClInclude Include="Hp.h" />
-    <ClInclude Include="TestMap.h" />
+    <ClInclude Include="Stair.h" />
+    <ClInclude Include="Stage2.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TestMap.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

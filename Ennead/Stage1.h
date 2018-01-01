@@ -1,4 +1,5 @@
 #pragma once
+class Stair;
 class Stage1 : public Scene
 {
 private:
@@ -6,6 +7,8 @@ private:
 	Player* player;
 	Sprite* block;
 	int SpawnTime;
+
+	Stair* stair;
 
 public:
 	CREATE_FUNC(Stage1);

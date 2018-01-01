@@ -13,7 +13,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	Application* app = Application::GetInstance();
 
 	app->Init(L"Ennead", 2000, 1080, false);
-	Director::GetInstance()->SetScene(TestMap::Create());
+	Director::GetInstance()->SetScene(Stage1::Create());
 	
 	app->GameLoop();
 

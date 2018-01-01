@@ -6,7 +6,11 @@ Player* Player::m_Instance = nullptr;
 Player::Player()
 	: m_Health(1)
 	, m_Speed(4.f)
+	, canMoveRight(1)
+	, canMoveLeft(1)
 {
+	m_State = PlayerState::Move;
+
 }
 
 Player::~Player()
@@ -94,6 +98,8 @@ void Player::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
+	printf("Player Position : %f, %f \n", m_Position.x, m_Position.y);
+
 	if (m_Health <= 0)
 	{
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
@@ -104,32 +110,33 @@ void Player::Update(float deltaTime)
 
 	m_Collision->SetPosition(m_Position);
 
+	//if(m_State == PlayerState::Move)
 	Move();
-	Attack();
+
+	//Attack();
 	
-	if (pState == PlayerState::Move)
+	if (m_State == PlayerState::Move)
 	{
-		switch (pDirection)
+		switch (m_Direction)
 		{
-		case PlayerDirection::Up:
+		case Direction::Up:
 
 			break;
 
-		case PlayerDirection::Down:
+		case Direction::Down:
 
 			break;
 
-		case PlayerDirection::Left:
+		case Direction::Left:
 
 			break;
 
-		case PlayerDirection::Right:
+		case Direction::Right:
 
 			break;
 
 		}
 	}
-
 
 }
 
@@ -137,23 +144,23 @@ void Player::Render()
 {
 	GameObject::Render();
 
-	if (pState == PlayerState::Move)
+	if (m_State == PlayerState::Move)
 	{
-		switch (pDirection)
+		switch (m_Direction)
 		{
-		case PlayerDirection::Up:
+		case Direction::Up:
 
 			break;
 
-		case PlayerDirection::Down:
+		case Direction::Down:
 
 			break;
 
-		case PlayerDirection::Left:
+		case Direction::Left:
 
 			break;
 
-		case PlayerDirection::Right:
+		case Direction::Right:
 
 			break;
 
@@ -173,7 +180,14 @@ void Player::OnCollision(GameObject * other)
 	if (other->GetTag() == Tag::Enemy)
 		m_Health == 1;
 
+	if (other->GetTag() == Tag::Structure)
+	{
+		printf("Structure Collision\n");
+		m_Location = PlayerLocation::Stair;
+		OtherPos = other->GetPosition();
+		OtherSize = other->GetSize();
 
+	}
 
 }
 
@@ -181,45 +195,71 @@ void Player::Move()
 {
 	checkInput = false;
 
-	if (Input::GetInstance()->GetKeyState('A') == KeyState::Pressed)
+	if (m_Location == PlayerLocation::Stair)
 	{
-		this->SetPosition(-m_Speed, 0.f);
-		pDirection = PlayerDirection::Left;
-		pState = PlayerState::Move;
+		if (m_Position.x < OtherPos.x)
+		{
+			canMoveLeft = 0;
+		}
 
-		checkInput = true;
+		if (m_Position.x > OtherPos.x + OtherSize.x - 50.f)
+		{
+			canMoveRight = 0;
+		}
+
 	}
 
-	if (Input::GetInstance()->GetKeyState('D') == KeyState::Pressed)
-	{
-		this->SetPosition(m_Speed, 0.f);
-		pDirection = PlayerDirection::Right;
-		pState = PlayerState::Move;
 
-		checkInput = true;
+	if (canMoveLeft)
+	{
+		if (Input::GetInstance()->GetKeyState('A') == KeyState::Pressed)
+		{
+			this->SetPosition(-m_Speed, 0.f);
+			m_Direction = Direction::Left;
+			m_State = PlayerState::Move;
+
+			checkInput = true;
+			canMoveRight = 1;
+		}
+	}
+
+	if (canMoveRight)
+	{
+		if (Input::GetInstance()->GetKeyState('D') == KeyState::Pressed)
+		{
+			this->SetPosition(m_Speed, 0.f);
+			m_Direction = Direction::Right;
+			m_State = PlayerState::Move;
+
+			checkInput = true;
+			canMoveLeft = 1;
+		}
 	}
 
 	if (Input::GetInstance()->GetKeyState('W') == KeyState::Pressed)
 	{
 		this->SetPosition(0.f, -m_Speed);
-		pDirection = PlayerDirection::Up;
-		pState = PlayerState::Move;
+		m_Direction = Direction::Up;
+		m_State = PlayerState::Move;
 
 		checkInput = true;
+		canMoveLeft = 1;
+		canMoveRight = 1;
 	}
 
 	if (Input::GetInstance()->GetKeyState('S') == KeyState::Pressed)
 	{
 		this->SetPosition(0.f, m_Speed);
-		pDirection = PlayerDirection::Down;
-		pState = PlayerState::Move;
+		m_Direction = Direction::Down;
+		m_State = PlayerState::Move;
 
 		checkInput = true;
-
+		canMoveLeft = 1;
+		canMoveRight = 1;
 	}
 
 	if (!checkInput)
-		pState = PlayerState::Idle;
+		m_State = PlayerState::Idle;
 
 	latingTime++;
 	if (latingTime >= 25)
@@ -236,8 +276,6 @@ void Player::Attack()
 			CanAttack = 0;
 
 			auto angle = GetAngle(m_Position, Input::GetInstance()->GetMousePosition());
-
-		//	printf("player angle = %f\n", angle);
 
 			BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2(10.f, -10.f), L"Resources/Bullet.png", Tag::Player, -angle , 10.f);
 
