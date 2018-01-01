@@ -10,7 +10,7 @@ Player::Player()
 	, canMoveLeft(1)
 {
 	m_State = PlayerState::Move;
-
+	m_Location = PlayerLocation::None;
 }
 
 Player::~Player()
@@ -206,6 +206,14 @@ void Player::Move()
 		{
 			canMoveRight = 0;
 		}
+
+		if (m_Position.y < OtherPos.y)
+		{
+			m_Location = PlayerLocation::None;
+		}
+
+		if (m_Position.y > OtherPos.y + OtherSize.y)
+			m_Location = PlayerLocation::None;
 
 	}
 

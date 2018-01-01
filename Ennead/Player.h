@@ -16,7 +16,8 @@ enum class PlayerState
 
 enum class PlayerLocation
 {
-	Stair =1
+	Stair =1,
+	None
 };
 
 class Player : public GameObject
