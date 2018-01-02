@@ -2,8 +2,9 @@
 enum class EnemyState
 {
 	Stand,
-	Walk,
-	Attack
+	Move,
+	Attack,
+	Dead
 };
 
 enum class EnemyName
@@ -52,4 +53,7 @@ public:
 	void UpdateState();
 	void UpdateMoveMent();
 
+public:
+	virtual void Move() = 0;
+	virtual void Attack() = 0;
 };

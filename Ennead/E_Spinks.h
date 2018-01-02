@@ -12,5 +12,6 @@ public:
 
 	bool Init(Vector2 pos);
 
-
+	void Move();
+	void Attack();
 };

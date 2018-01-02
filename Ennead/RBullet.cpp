@@ -85,6 +85,9 @@ void RBullet::OnCollision(GameObject * other)
 {
 	if (other)
 	{
+		if (other->GetTag() == Tag::Structure)
+			return;
+
 		IsCollide = 1;
 	}
 }

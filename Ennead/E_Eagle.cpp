@@ -47,27 +47,6 @@ void E_Eagle::Release()
 void E_Eagle::Update(float deltaTime)
 {
 	Enemy::Update(deltaTime);
-	
-
-	//for (int i = 1; i < 100;)
-	//	radius = -190.f * -i;
-
-	//if (m_Position.x >= 1200)
-	//{
-	//	radius = -190.f;
-	//	radius = D3DXToRadian(radius);
-	//}
-
-	Move();
-
-	m_Collision->SetPosition(m_Position);
-
-	if (m_Health <= 0)
-	{
-		CollisionMgr::GetInstance()->Destroy(m_Collision);
-		Destroy();
-	}
-
 }
 
 void E_Eagle::Render()
@@ -81,6 +60,10 @@ void E_Eagle::Move()
 
 	SetPosition(cos(c) * 5, 1);
 	
+}
+
+void E_Eagle::Attack()
+{
 }
 
 void E_Eagle::OnCollision(GameObject * other)

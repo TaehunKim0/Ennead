@@ -17,4 +17,8 @@ public:
 	void Render();
 
 	void OnCollision(GameObject* other);
+
+public:
+	void Move();
+	void Attack();
 };

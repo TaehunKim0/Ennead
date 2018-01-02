@@ -21,33 +21,22 @@ void Stage1::Release()
 bool Stage1::Init()
 {
 	Scene::Init();
+	srand(time(NULL));
+
 	player = Player::GetInstance();
 	player->Init();
-	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Thoth, 60 * 2);
-
 	player->SetPosition(850, 700);
+
 	Map1 = Sprite::Create(L"Resources/Map/Stage1.png");
 	Map1->SetPosition(0.f, -7000.f);
-	srand(time(NULL));
 
 	stair = Stair::Create(Vector2{ 702.f, -850.f });
 	
-	
+	EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, -100), EnemyName::Anubis, 60 * 2);
+
 	AddChild(Map1);
 	AddChild(player);
 	AddChild(stair);
-
-
-
-	//block = Sprite::Create(L"Resources/block.png");
-	//block->MatrixUsing(1);
-
-	//AddChild(block);
-	//block->SetPosition(702.f, -900.f);
-
-	
-
-	//block->SetPosition(700.f, 653.f);
 
 	AddChild(BulletMgr::GetInstance());
 	AddChild(EnemySpawner::GetInstance());
@@ -66,8 +55,6 @@ void Stage1::Update(float deltaTime)
 
 	if (SpawnTime == 60)
 	{
-		//EffectFactory::GetInstance()->CreateCollisionEffect(500.f, 500.f);
-		//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1000, -100), EnemyName::Anubis, 60 * 2);
 		//SpawnEnemys();
 		SpawnTime = 0;
 	}
@@ -105,13 +92,6 @@ void Stage1::Update(float deltaTime)
 void Stage1::Render()
 {
 	GameObject::Render();
-
-	//printf("asdfasdkjashdkashdasjkhdasjkdh");
-
-
-
-	//BulletMgr::GetInstance()->Render();
-
 }
 
 void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
@@ -142,9 +122,4 @@ void Stage1::SpawnEnemys() //랜덤으로 소환 되는 곳
 	//미라
 	if (randomMonster == 4)
 		EnemySpawner::GetInstance()->SpawnEnemy(Vector2(randomX, -100), EnemyName::Thoth, 60 * 2);
-
-	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(600, 0), EnemyName::Eagle, 60 * 2);
-	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(800, 0), EnemyName::Anubis, 60 * 2);
-	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1000, 0), EnemyName::Eagle, 60 * 2);
-	//EnemySpawner::GetInstance()->SpawnEnemy(Vector2(1200, 0), EnemyName::Eagle, 60 * 2);
 }

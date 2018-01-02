@@ -20,6 +20,7 @@ public:
 
 public:
 	void Move();
+	void Attack();
 	void OnCollision(GameObject* other);
 };
 

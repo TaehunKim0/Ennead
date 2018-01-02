@@ -8,7 +8,6 @@ Enemy::Enemy()
 {
 }
 
-
 Enemy::~Enemy()
 {
 }
@@ -34,6 +33,12 @@ bool Enemy::Init(Vector2 pos, Animation *anim, EnemyName name)
 void Enemy::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+
+	if (m_Health <= 0)
+		m_State = EnemyState::Dead;
+
+	m_Collision->SetPosition(m_Position);
+
 	UpdateState();
 	UpdateMoveMent();
 }
@@ -47,20 +52,24 @@ void Enemy::UpdateState()
 {
 	switch (m_State)
 	{
-	case EnemyState::Stand:
-		
-		break;
-
-	case EnemyState::Walk:
-
+	case EnemyState::Move:
+		Move();
 		break;
 
 	case EnemyState::Attack:
-
+		Attack();
 		break;
+
+	case EnemyState::Dead:
+	{
+		CollisionMgr::GetInstance()->Destroy(m_Collision);
+		Destroy();
+		break;
+	}
 	}
 }
 
 void Enemy::UpdateMoveMent()
 {
+
 }

@@ -44,3 +44,11 @@ bool E_Spinks::Init(Vector2 pos)
 
 	return true;
 }
+
+void E_Spinks::Move()
+{
+}
+
+void E_Spinks::Attack()
+{
+}

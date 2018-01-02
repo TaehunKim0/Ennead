@@ -47,15 +47,6 @@ void E_Anubis::Update(float deltaTime)
 {
 	Enemy::Update(deltaTime);
 
-	MoveAttackCheck();
-
-	if (m_Health <= 0)
-	{
-		CollisionMgr::GetInstance()->Destroy(m_Collision);
-		Destroy();
-	}
-
-	/////////////////////////
 	if (Frame / 60  == 2)
 	{
 		m_State = EnemyState::Attack;
@@ -78,21 +69,6 @@ void E_Anubis::OnCollision(GameObject * other)
 	{
 		EffectFactory::GetInstance()->CreateCollisionEffect(m_Position.x, m_Position.y);
 		m_Health -= 1;
-	}
-}
-
-void E_Anubis::MoveAttackCheck()
-{
-	switch (m_State)
-	{
-	case EnemyState::Move:
-		Move();
-		break;
-
-	case EnemyState::Attack:
-		Attack();
-		break;
-
 	}
 }
 
@@ -137,8 +113,6 @@ void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
 {
 	float angle = GetAngle(m_Position , targetPosition);
 
-	//BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, angle, throwSpeed);
-
 	BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f } , L"Resources/Bullet.png", Tag::Enemy, -60.f, throwSpeed);
 	
 	BulletMgr::GetInstance()->CreateRBullet(m_Position + Vector2{ 20.f,30.f }, L"Resources/Bullet.png", Tag::Enemy, -45.f, throwSpeed);
@@ -149,8 +123,6 @@ void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
 	
 	auto direction = (rand() % 2) + 1;
 
-	//printf("direction : %d\n", direction);
-
 	if (direction == 1)
 	{
 		m_Direction = EnemyDirection::Right;
@@ -160,5 +132,4 @@ void E_Anubis::ThrowSpear(Vector2 targetPosition, int throwSpeed)
 	{
 		m_Direction = EnemyDirection::Left;
 	}
-
 }

@@ -36,8 +36,6 @@ public:
 	void OnCollision(GameObject* other);
 
 public:
-	void MoveAttackCheck();
-
 	void Move();
 	void Attack();
 	void ThrowSpear(Vector2 targetPosition, int throwSpeed);
