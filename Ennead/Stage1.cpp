@@ -30,7 +30,7 @@ bool Stage1::Init()
 	Map1->SetPosition(0.f, -7000.f);
 	srand(time(NULL));
 
-	stair = Stair::Create(Vector2{ 702.f, -900.f });
+	stair = Stair::Create(Vector2{ 702.f, -850.f });
 	
 	
 	AddChild(Map1);

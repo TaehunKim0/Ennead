@@ -20,6 +20,14 @@ enum class PlayerLocation
 	None
 };
 
+enum class CanMoveDirection
+{
+	Left = 1,
+	Right,
+	Up,
+	Down
+};
+
 class Player : public GameObject
 {
 private:
@@ -51,6 +59,10 @@ private:
 	bool checkInput;
 	bool canMoveRight;
 	bool canMoveLeft;
+	bool canMoveUp;
+	bool canMoveDown;
+
+	CanMoveDirection m_CanDirection;
 
 	Sprite* pplayer;
 

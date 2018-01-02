@@ -8,6 +8,8 @@ Player::Player()
 	, m_Speed(4.f)
 	, canMoveRight(1)
 	, canMoveLeft(1)
+	, canMoveDown(1)
+	, canMoveUp(1)
 {
 	m_State = PlayerState::Move;
 	m_Location = PlayerLocation::None;
@@ -215,6 +217,9 @@ void Player::Move()
 		if (m_Position.y > OtherPos.y + OtherSize.y)
 			m_Location = PlayerLocation::None;
 
+		
+
+
 	}
 
 
@@ -228,6 +233,8 @@ void Player::Move()
 
 			checkInput = true;
 			canMoveRight = 1;
+			canMoveUp = 1;
+			canMoveDown = 1;
 		}
 	}
 
@@ -241,29 +248,39 @@ void Player::Move()
 
 			checkInput = true;
 			canMoveLeft = 1;
+			canMoveDown = 1;
+			canMoveUp = 1;
+		}
+	}
+	
+	if (canMoveUp)
+	{
+		if (Input::GetInstance()->GetKeyState('W') == KeyState::Pressed)
+		{
+			this->SetPosition(0.f, -m_Speed);
+			m_Direction = Direction::Up;
+			m_State = PlayerState::Move;
+
+			checkInput = true;
+			canMoveLeft = 1;
+			canMoveRight = 1;
+			canMoveUp = 1;
 		}
 	}
 
-	if (Input::GetInstance()->GetKeyState('W') == KeyState::Pressed)
+	if (canMoveDown)
 	{
-		this->SetPosition(0.f, -m_Speed);
-		m_Direction = Direction::Up;
-		m_State = PlayerState::Move;
+		if (Input::GetInstance()->GetKeyState('S') == KeyState::Pressed)
+		{
+			this->SetPosition(0.f, m_Speed);
+			m_Direction = Direction::Down;
+			m_State = PlayerState::Move;
 
-		checkInput = true;
-		canMoveLeft = 1;
-		canMoveRight = 1;
-	}
-
-	if (Input::GetInstance()->GetKeyState('S') == KeyState::Pressed)
-	{
-		this->SetPosition(0.f, m_Speed);
-		m_Direction = Direction::Down;
-		m_State = PlayerState::Move;
-
-		checkInput = true;
-		canMoveLeft = 1;
-		canMoveRight = 1;
+			checkInput = true;
+			canMoveLeft = 1;
+			canMoveRight = 1;
+			canMoveUp = 1;
+		}
 	}
 
 	if (!checkInput)

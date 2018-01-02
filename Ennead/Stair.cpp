@@ -32,7 +32,7 @@ bool Stair::Init(Vector2 pos)
 	SetPosition(pos);
 	SetTag(Tag::Structure);
 	
-	stair = Sprite::Create(L"Resources/block.png");
+	stair = Sprite::Create(L"Resources/block1.png");
 
 	m_Size = stair->GetSize();
 
@@ -72,7 +72,7 @@ void Stair::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	m_Collision->PositionSet(m_Position.x, m_Position.y);
+	m_Collision->PositionSet(m_Position.x, m_Position.y + 100.f);
 
 	//Right->PositionSet(stair->GetPosition().x + stair->GetSize().x + 30.f, stair->GetPosition().y);
 	//Left->PositionSet( stair->GetPosition().x - stair->GetSize().x, stair->GetPosition().y);
