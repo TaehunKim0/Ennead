@@ -52,7 +52,6 @@ void Bullet::Update(float deltaTime)
 
 	if (IsCollide || m_LifeTime <= 0)
 	{
-		printf("Bullet Delete\n");
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}
@@ -78,6 +77,5 @@ void Bullet::OnCollision(GameObject * other)
 	if (other)
 	{
 		IsCollide = 1;
-		printf("Bullet Destroyed\n");
 	}
 }

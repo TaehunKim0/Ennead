@@ -8,6 +8,7 @@ public:
 	Effect();
 	~Effect(); 
 
+public:
 	bool Init(Vector2 pos);
 	void Update(float deltaTime);
 	void Render();

@@ -13,7 +13,6 @@ Enemy::~Enemy()
 {
 }
 
-
 void Enemy::Release()
 {
 	GameObject::Release();
@@ -22,11 +21,8 @@ void Enemy::Release()
 bool Enemy::Init(Vector2 pos, Animation *anim, EnemyName name)
 {
 	m_Position = pos;
-
 	m_Size = anim->GetSize();
-
 	m_Collision = BoxCollider::Create(m_Position, m_Size);
-
 	m_Tag = Tag::Enemy;
 	m_EName = name;
 
@@ -35,15 +31,36 @@ bool Enemy::Init(Vector2 pos, Animation *anim, EnemyName name)
 	return true;
 }
 
-
-
-
 void Enemy::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
+	UpdateState();
+	UpdateMoveMent();
 }
 
 void Enemy::Render()
 {
 	GameObject::Render();
+}
+
+void Enemy::UpdateState()
+{
+	switch (m_State)
+	{
+	case EnemyState::Stand:
+		
+		break;
+
+	case EnemyState::Walk:
+
+		break;
+
+	case EnemyState::Attack:
+
+		break;
+	}
+}
+
+void Enemy::UpdateMoveMent()
+{
 }

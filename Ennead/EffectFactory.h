@@ -8,13 +8,11 @@ public:
 	EffectFactory();
 	~EffectFactory();
 
-	void CreateDeadEffect(float x , float y);
-	void CreateCollisionEffect(float x , float y);
-
-	
-
 	void Update(float deltaTime);
 	void Render();
 
+public:
+	void CreateDeadEffect(float x, float y);
+	void CreateCollisionEffect(float x, float y);
 };
 

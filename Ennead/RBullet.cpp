@@ -59,16 +59,12 @@ void RBullet::Update(float deltaTime)
 
 	if (IsCollide || m_LifeTime <= 0)
 	{
-		printf("RBullet Delete\n");
 		CollisionMgr::GetInstance()->Destroy(m_Collision);
 		Destroy();
 	}
 
 	if (m_Tag == Tag::Player)
 	{
-		//m_Radius = (m_Radius * 180) / Math_PI;
-		//auto Radius = D3DXToRadian(m_Radius);
-
 		auto Radius = (m_Radius * 180) / Math_PI;
 		SetPosition(cos(Radius) * m_Speed, -sin(Radius) *m_Speed);
 	}
@@ -76,9 +72,6 @@ void RBullet::Update(float deltaTime)
 	if (m_Tag == Tag::Enemy)
 	{
 		auto Radius = (m_Radius * 180) / Math_PI;
-
-		
-
 		SetPosition(cos(Radius)* m_Speed, -sin(Radius)*m_Speed);
 	}
 }
@@ -94,5 +87,4 @@ void RBullet::OnCollision(GameObject * other)
 	{
 		IsCollide = 1;
 	}
-
 }

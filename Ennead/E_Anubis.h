@@ -5,7 +5,6 @@
 class E_Anubis : public Enemy
 {
 private:
-	
 	 float GetAngle(Vector2 p1, Vector2 p2)
 	 {
 		float xdf = p2.x - p1.x;
@@ -17,13 +16,10 @@ private:
 
 		return ang;
 	}
-	
 private:
 	Animation* anubis;
-	
 	int Frame;
 	float radius;
-
 	int KeepTime;
 
 public:

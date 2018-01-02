@@ -1,9 +1,9 @@
 #pragma once
 enum class EnemyState
 {
-	Move = 1,
-	Attack,
-	Idle
+	Stand,
+	Walk,
+	Attack
 };
 
 enum class EnemyName
@@ -19,23 +19,24 @@ enum class EnemyName
 
 enum class EnemyDirection
 {
-	None,
 	Left = 1,
-	Right
+	Right,
+	Up,
+	Down
 };
 
 class Enemy : public GameObject
 {
 protected:
-	Sprite* m_Sprite;
-	Animation * m_Anim;
-
-	int m_Health;
-	int m_Speed;
-
 	EnemyName m_EName;
 	EnemyState m_State;
 	EnemyDirection m_Direction;
+	Animation * m_Anim;
+
+protected:
+	int m_Health;
+	int m_Speed;
+	Sprite* m_Sprite;
 
 public:
 	Enemy();
@@ -47,7 +48,8 @@ public:
 	void Update(float deltaTime);
 	void Render();
 
-};
+public:
+	void UpdateState();
+	void UpdateMoveMent();
 
-//void Idle() Enemy 들의 공통 Idle
-//void OnIdle() Enemy 를 상속받은 각각의 Idle
+};

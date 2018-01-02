@@ -25,30 +25,22 @@ void Player::SetAnimWithClass(PlayerClass job)
 	{
 		if (job == PlayerClass::Warrior)
 		{
-			//Straight->AddFrame
-			//Left->
-			//Right->
+			//LoadAnimation("walk",Direction);
 		}
 
 		if (job == PlayerClass::Thief)
 		{
 			//Straight->AddFrame
-			//Left->
-			//Right->
 		}
 
 		if (job == PlayerClass::Magician)
 		{
 			//Straight->AddFrame
-			//Left->
-			//Right->
 		}
 
 		if (job == PlayerClass::Archer)
 		{
 			//Straight->AddFrame
-			//Left->
-			//Right->
 		}
 
 	}
